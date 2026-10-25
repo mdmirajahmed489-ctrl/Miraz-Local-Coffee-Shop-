@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Menu & Online Order | Local Coffee Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Special Discount Banner -->
+  <div class="discount-banner" id="discountBanner">
+    <span>🎉 <strong>স্পেশাল অফার!</strong> সব কফি ও পেস্ট্রিতে ২০% ডিসকাউন্ট পেতে ব্যবহার করুন কোড: <strong>COFFEE20</strong></span>
+    <button type="button" class="banner-btn banner-order-btn">অর্ডার দেখুন (View Cart)</button>
+    <button type="button" class="banner-close" id="bannerCloseBtn" title="Dismiss Banner">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand-group">
+      <a href="index.html" class="logo">☕ Local Coffee Shop</a>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openSiteEditor('tabMenu'); return false;">⚙️ ওয়েবসাইট কাস্টমাইজ করুন (Customize Site)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleInlineEditMode(); return false;"><span class="edit-mode-status-text">✏️ এডিট মোড: বন্ধ (চালু করতে ক্লিক করুন)</span></a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openOrderTracker(); return false;">📦 Live Order Tracker (অর্ডার ট্র্যাকিং)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openPastOrdersModal(); return false;">📜 Past Orders (অর্ডারের ইতিহাস)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleAiBaristaChat(); return false;">🤖 এআই বারিস্টা ও ভয়েস অ্যাসিস্ট্যান্ট (AI Barista)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleSiteTheme(); return false;"><span class="mobile-theme-text">🌙 ডার্ক মোড চালু করুন (Theme)</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <!-- Google Translate Container -->
+      <div id="google_translate_element" style="display: inline-block; margin-left: 10px;"></div>
+      <button type="button" class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme">🌙</button>
+      <button type="button" class="nav-tracker-btn" onclick="window.openOrderTracker()" title="আপনার লাইভ অর্ডার ট্র্যাক করুন">
+        📦 <span class="nav-btn-text">Track Order</span>
+      </button>
+      <button type="button" class="nav-tracker-btn" onclick="window.openPastOrdersModal()" title="অর্ডারের ইতিহাস দেখুন" style="background: rgba(212, 175, 55, 0.15); border: 1px solid var(--accent-gold);">
+        📜 <span class="nav-btn-text">Past Orders</span>
+      </button>
+      <button type="button" class="nav-cart-btn">
+        🛒 <span class="nav-btn-text">Cart</span> <span class="cart-badge">0</span>
+      </button>
+      <button type="button" class="btn btn-sm btn-customize-nav" onclick="window.openSiteEditor('tabMenu')" style="background: var(--accent-gold); color: #1E293B; font-weight: 800; padding: 6px 12px; font-size: 0.82rem; border-radius: 6px;" title="পুরো ওয়েবসাইটের যেকোনো তথ্য এডিট ও কাস্টমাইজ করুন">
+        ⚙️ <span class="nav-btn-text">কাস্টমাইজ</span>
+      </button>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </nav>
+
+  <section class="container">
+    <!-- Section Quick Edit Banner (Visible in Edit Mode) -->
+    <div class="section-edit-banner">
+      <span>✏️ মেনু ও আইটেম প্রাইসিং কাস্টমাইজেশন মোড</span>
+      <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabMenu')">
+        ✏️ মেনু আইটেম ও দাম পরিবর্তন করুন (Edit Menu)
+      </button>
+    </div>
+
+    <div class="text-center" style="margin-bottom: 2rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div style="text-align: left;">
+          <h1 class="section-title" style="font-size: 2.4rem; text-align: left; margin-bottom: 4px;">আমাদের মেনু ও অনলাইন অর্ডার</h1>
+          <p class="section-subtitle" style="text-align: left; margin-bottom: 0;">পছন্দের যেকোনো কফি ও পেস্ট্রি সরাসরি কার্টে যুক্ত করে দ্রুত অর্ডার করুন</p>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <button type="button" class="btn btn-sm" onclick="window.downloadCompleteMenuPDF()" style="background: var(--primary); color: #FFF; font-weight: 700; border-radius: 6px;">
+            📥 সম্পূর্ণ মেনু পিডিএফ (PDF)
+          </button>
+          <button type="button" class="btn btn-sm" onclick="window.openSiteEditor('tabMenu')" style="background: var(--accent-gold); color: #2C1810; font-weight: 800;">
+            ⚙️ মেনু এডিটর ও নতুন আইটেম
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Menu Search & Category Filter Control Hub -->
+    <div class="menu-search-filter-wrapper" id="menuSearchFilterSection">
+      <div class="menu-search-box-card">
+        <!-- Main Search Input Row -->
+        <div class="menu-search-input-group">
+          <span class="menu-search-icon" aria-hidden="true">🔍</span>
+          <input 
+            type="text" 
+            id="menuSearchInput" 
+            class="menu-search-input" 
+            placeholder="কফি বা পেস্ট্রির নাম লিখুন (Search: Espresso, Latte, Croissant, ব্রাউনি, মাফিন)..." 
+            autocomplete="off"
+            aria-label="কফি বা পেস্ট্রির নাম খুঁজুন"
+          >
+          <button type="button" id="menuSearchClearBtn" class="menu-search-clear-btn" style="display: none;" title="সার্চ মুছুন" aria-label="সার্চ ক্লিয়ার করুন">
+            ✕
+          </button>
+        </div>
+
+        <!-- Filter Categories & Results Badge -->
+        <div class="menu-search-meta-row">
+          <div class="menu-category-filter-chips" id="menuCategoryFilterGroup">
+            <button type="button" class="menu-cat-chip active" data-category="all">🌟 সবগুলো (All)</button>
+            <button type="button" class="menu-cat-chip" data-category="drinks">☕ কফি ও ড্রিংকস</button>
+            <button type="button" class="menu-cat-chip" data-category="pastries">🥐 পেস্ট্রি ও বেকারি</button>
+            <button type="button" class="menu-cat-chip" data-category="seasonal">✨ সিজনাল স্পেশাল</button>
+            <button type="button" class="menu-cat-chip" data-category="combos">🎓 স্টুডেন্ট কম্বো</button>
+          </div>
+          <div class="menu-search-count-pill" id="menuSearchResultCount">
+            সকল আইটেম প্রদর্শিত
+          </div>
+        </div>
+
+        <!-- Popular Quick Search Tag Chips -->
+        <div class="menu-quick-tags-row">
+          <span class="quick-tags-label">⚡ দ্রুত ফিল্টার:</span>
+          <div class="quick-tags-scroll">
+            <button type="button" class="menu-quick-tag" onclick="window.setMenuSearchQuery('Espresso')">☕ Espresso</button>
+            <button type="button" class="menu-quick-tag" onclick="window.setMenuSearchQuery('Latte')">🥛 Caffè Latte</button>
+            <button type="button" class="menu-quick-tag" onclick="window.setMenuSearchQuery('Cappuccino')">☕ Cappuccino</button>
+            <button type="button" class="menu-quick-tag" onclick="window.setMenuSearchQuery('Croissant')">🥐 Croissant</button>
+            <button type="button" class="menu-quick-tag" onclick="window.setMenuSearchQuery('Cold Brew')">❄️ Cold Brew</button>
+            <button type="button" class="menu-quick-tag" onclick="window.setMenuSearchQuery('Chocolate')">🍫 Chocolate</button>
+            <button type="button" class="menu-quick-tag" onclick="window.setMenuSearchQuery('Brownie')">🧁 Brownie</button>
+            <button type="button" class="menu-quick-tag" onclick="window.setMenuSearchQuery('Muffin')">🫐 Muffin</button>
+            <button type="button" class="menu-quick-tag" onclick="window.setMenuSearchQuery('Pumpkin')">🍁 Pumpkin</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- No items found empty state -->
+      <div id="menuSearchEmptyState" class="menu-search-empty-state" style="display: none;">
+        <div class="empty-state-icon">🔍☕</div>
+        <h3 class="empty-state-title">কোনো কফি বা পেস্ট্রি পাওয়া যায়নি</h3>
+        <p class="empty-state-desc">"<strong id="menuSearchEmptyQuery" style="color: var(--accent-gold);"></strong>" নামে আমাদের মেনুতে কোনো আইটেম মেলেনি। বানান পরীক্ষা করুন অথবা অন্য কোনো নাম দিয়ে চেষ্টা করুন।</p>
+        <button type="button" class="btn btn-sm btn-reset-menu-search" onclick="window.resetMenuSearch()">
+          🔄 সকল আইটেম পুনরায় দেখুন (Show All Items)
+        </button>
+      </div>
+    </div>
+
+    <!-- Student Special Combo Banner in Menu Page -->
+    <div class="menu-section-group" id="menuCombosSection" style="background: linear-gradient(135deg, #1E293B, #0F172A); border: 2px solid var(--accent-gold); border-radius: var(--radius-md); padding: 1.5rem; color: #fff; margin-bottom: 3rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1.2rem;">
+        <div>
+          <span style="background: rgba(212, 175, 55, 0.2); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 3px 10px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700;">🎓 Student Budget Corner</span>
+          <h2 style="color: #FFF8DC; margin: 6px 0 2px 0; font-size: 1.6rem;">ছাত্র স্পেশাল স্টাডি কম্বো (Student Study Combos)</h2>
+          <p style="color: #CBD5E1; margin: 0; font-size: 0.9rem;">স্টুডেন্টদের জন্য বাজেট ফ্রেন্ডলি কম্বো অফার — ২৫% পর্যন্ত ছাড়ের সাথে দ্রুত অর্ডার করুন</p>
+        </div>
+        <button type="button" class="btn btn-sm" onclick="window.applyStudentPromoQuick()" style="background: var(--accent-gold); color: #1E293B; font-weight: 800; border-radius: 6px; cursor: pointer;">
+          🏷️ কোড: STUDENT25 অ্যাপ্লাই করুন
+        </button>
+      </div>
+
+      <div class="grid grid-4" style="gap: 14px;">
+        <div class="menu-searchable-card" data-menu-category="combos" data-name="Exam Night Crunch Combo" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(212,175,55,0.3); border-radius: var(--radius-sm); padding: 1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <h4 style="margin: 0; color: #FFF8DC; font-size: 0.98rem;">Exam Night Crunch</h4>
+              <span style="background: #E74C3C; color: #fff; font-size: 0.68rem; padding: 2px 5px; border-radius: 3px; font-weight: 800;">SAVE 21%</span>
+            </div>
+            <p style="font-size: 0.78rem; color: #CBD5E1; margin: 6px 0 10px 0;">১টি কোল্ড ব্রু + ১টি ডার্ক চকলেট ব্রাউনি</p>
+          </div>
+          <div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px;">৫৫০ ৳ <span style="font-size: 0.8rem; text-decoration: line-through; color: #94A3B8;">৭০০ ৳</span></div>
+            <div class="card-order-actions">
+              <button type="button" class="btn-add-to-cart-action" onclick="window.addStudentComboToCart('Exam Night Crunch Combo', 550, this)">
+                🛒 ব্যাগে যোগ
+              </button>
+              <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Exam Night Crunch Combo', 550)">
+                ⚡ দ্রুত অর্ডার
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-searchable-card" data-menu-category="combos" data-name="Group Study Platter" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(212,175,55,0.3); border-radius: var(--radius-sm); padding: 1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <h4 style="margin: 0; color: #FFF8DC; font-size: 0.98rem;">Group Study Platter</h4>
+              <span style="background: #E74C3C; color: #fff; font-size: 0.68rem; padding: 2px 5px; border-radius: 3px; font-weight: 800;">SAVE 22%</span>
+            </div>
+            <p style="font-size: 0.78rem; color: #CBD5E1; margin: 6px 0 10px 0;">৩টি ক্যাপুচিনো + ৩টি বাটার ক্রোয়াসোঁ</p>
+          </div>
+          <div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px;">১৬৫০ ৳ <span style="font-size: 0.8rem; text-decoration: line-through; color: #94A3B8;">২১০০ ৳</span></div>
+            <div class="card-order-actions">
+              <button type="button" class="btn-add-to-cart-action" onclick="window.addStudentComboToCart('Group Study Platter (3x Coffee + 3x Pastry)', 1650, this)">
+                🛒 ব্যাগে যোগ
+              </button>
+              <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Group Study Platter (3x Coffee + 3x Pastry)', 1650)">
+                ⚡ দ্রুত অর্ডার
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-searchable-card" data-menu-category="combos" data-name="Assignment Booster" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(212,175,55,0.3); border-radius: var(--radius-sm); padding: 1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <h4 style="margin: 0; color: #FFF8DC; font-size: 0.98rem;">Assignment Booster</h4>
+              <span style="background: #E74C3C; color: #fff; font-size: 0.68rem; padding: 2px 5px; border-radius: 3px; font-weight: 800;">SAVE 20%</span>
+            </div>
+            <p style="font-size: 0.78rem; color: #CBD5E1; margin: 6px 0 10px 0;">১টি ডাবল এসপ্রেসো + ১টি সিনামন রোল</p>
+          </div>
+          <div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px;">৫৮০ ৳ <span style="font-size: 0.8rem; text-decoration: line-through; color: #94A3B8;">৭২৫ ৳</span></div>
+            <div class="card-order-actions">
+              <button type="button" class="btn-add-to-cart-action" onclick="window.addStudentComboToCart('Assignment Booster Combo', 580, this)">
+                🛒 ব্যাগে যোগ
+              </button>
+              <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Assignment Booster Combo', 580)">
+                ⚡ দ্রুত অর্ডার
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-searchable-card" data-menu-category="combos" data-name="Budget Chai & Muffin" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(212,175,55,0.3); border-radius: var(--radius-sm); padding: 1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <h4 style="margin: 0; color: #FFF8DC; font-size: 0.98rem;">Budget Chai & Muffin</h4>
+              <span style="background: #E74C3C; color: #fff; font-size: 0.68rem; padding: 2px 5px; border-radius: 3px; font-weight: 800;">SAVE 25%</span>
+            </div>
+            <p style="font-size: 0.78rem; color: #CBD5E1; margin: 6px 0 10px 0;">১টি মসলা চাই লাতে + ১টি ব্লুবেরি মাফিন</p>
+          </div>
+          <div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px;">৬০০ ৳ <span style="font-size: 0.8rem; text-decoration: line-through; color: #94A3B8;">৮০০ ৳</span></div>
+            <div class="card-order-actions">
+              <button type="button" class="btn-add-to-cart-action" onclick="window.addStudentComboToCart('Budget Chai & Muffin Combo', 600, this)">
+                🛒 ব্যাগে যোগ
+              </button>
+              <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Budget Chai & Muffin Combo', 600)">
+                ⚡ দ্রুত অর্ডার
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seasonal Specials Section in Menu Page -->
+    <div class="seasonal-specials-section menu-section-group" id="menuSeasonalSection" style="margin-bottom: 3.5rem;">
+      <div class="seasonal-header-row">
+        <div>
+          <span class="seasonal-badge-pill">✨ Chef & Seasonal Specials</span>
+          <h2 class="seasonal-main-title">সিজনাল স্পেশাল ও অফার (Seasonal Specials)</h2>
+          <p class="seasonal-subtitle">সীমিত সংস্করণের বিশেষ রেসিপি, সিজনাল ড্রাফট এবং শেফ স্পেশাল ডেজার্ট ২০% পর্যন্ত ছাড়ে</p>
+        </div>
+        <button type="button" class="btn btn-sm" onclick="window.openSiteEditor('tabMenu')" style="background: var(--accent-gold); color: #1E293B; font-weight: 800; border-radius: 6px;">
+          ⚙️ স্পেশাল আইটেম এডিটর
+        </button>
+      </div>
+
+      <!-- Season Filter Group -->
+      <div class="season-filter-group" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+        <button type="button" class="filter-chip active" data-season="all">🌟 সবগুলো স্পেশাল (All)</button>
+        <button type="button" class="filter-chip" data-season="autumn">🍁 অটাম স্পেশাল (Autumn)</button>
+        <button type="button" class="filter-chip" data-season="summer">🥭 সামার চিল (Summer)</button>
+        <button type="button" class="filter-chip" data-season="winter">❄️ উইন্টার মোকা (Winter)</button>
+        <button type="button" class="filter-chip" data-season="spring">🍓 স্প্রিং বেকারি (Spring)</button>
+        <button type="button" class="filter-chip" data-season="reserve">☕ ফাউন্ডার রিজার্ভ (Reserve)</button>
+      </div>
+
+      <!-- Seasonal Container -->
+      <div class="seasonal-specials-grid" id="menuSeasonalSpecialsContainer"></div>
+    </div>
+
+    <!-- Drinks Section -->
+    <div class="menu-section-group" id="menuDrinksSection" style="margin-bottom: 3.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+        <h2 style="display: flex; align-items: center; gap: 8px; margin: 0; color: var(--primary);">
+          <span>☕</span> প্রিমিয়াম ড্রিংকস ও কফি (Signature Drinks)
+        </h2>
+        <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabMenu')">
+          ✏️ ড্রিংকস পরিবর্তন
+        </button>
+      </div>
+      <div class="grid grid-3" id="dynamicDrinksGrid">
+        <div class="card menu-card menu-searchable-card" data-menu-category="drinks">
+          <div class="menu-card-header">
+            <h3>Espresso</h3>
+            <span class="price">৩৫০ ৳</span>
+          </div>
+          <p>গাঢ়, সুগন্ধযুক্ত ও খাঁটি অ্যারাবিকা এসপ্রেসো শট।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Espresso" data-price="350">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Espresso', 350)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+
+        <div class="card menu-card menu-searchable-card" data-menu-category="drinks">
+          <div class="menu-card-header">
+            <h3>Caffè Latte</h3>
+            <span class="price">৪৫০ ৳</span>
+          </div>
+          <p>মসৃণ স্টিমড মিল্ক এবং ক্রিমি এসপ্রেসোর অনন্য মেলবন্ধন।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Caffè Latte" data-price="450">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Caffè Latte', 450)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+
+        <div class="card menu-card menu-searchable-card" data-menu-category="drinks">
+          <div class="menu-card-header">
+            <h3>Cappuccino</h3>
+            <span class="price">৪০০ ৳</span>
+          </div>
+          <p>পারফেক্ট মিল্ক ফোম এবং কোকোয়া ডাস্টসহ ক্ল্যাসিক ইতালিয়ান ক্যাপুচিনো।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Cappuccino" data-price="400">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Cappuccino', 400)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+
+        <div class="card menu-card menu-searchable-card" data-menu-category="drinks">
+          <div class="menu-card-header">
+            <h3>Hot Chocolate</h3>
+            <span class="price">৪০০ ৳</span>
+          </div>
+          <p>খাঁটি বেলজিয়ান চকলেট ও ভ্যানিলা ফ্রথ দিয়ে তৈরি মিষ্টি পানীয়।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Hot Chocolate" data-price="400">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Hot Chocolate', 400)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+
+        <div class="card menu-card menu-searchable-card" data-menu-category="drinks">
+          <div class="menu-card-header">
+            <h3>Cold Brew Coffee</h3>
+            <span class="price">৩৫০ ৳</span>
+          </div>
+          <p>১৬ ঘণ্টা ধরে প্রস্তুত রিফ্রেশিং ও লো-অ্যাসিড কোল্ড ব্রু।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Cold Brew Coffee" data-price="350">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Cold Brew Coffee', 350)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+
+        <div class="card menu-card menu-searchable-card" data-menu-category="drinks">
+          <div class="menu-card-header">
+            <h3>Spiced Chai Latte</h3>
+            <span class="price">৪৫০ ৳</span>
+          </div>
+          <p>সুগন্ধি এলাচ, দারুচিনি ও মশলাযুক্ত ব্লেন্ডেড চা।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Spiced Chai Latte" data-price="450">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Spiced Chai Latte', 450)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pastries Section -->
+    <div class="menu-section-group" id="menuPastriesSection">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+        <h2 style="display: flex; align-items: center; gap: 8px; margin: 0; color: var(--primary);">
+          <span>🥐</span> তাজা বেকড পেস্ট্রি ও ডেজার্ট (Fresh Pastries)
+        </h2>
+        <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabMenu')">
+          ✏️ পেস্ট্রি পরিবর্তন
+        </button>
+      </div>
+      <div class="grid grid-3" id="dynamicPastriesGrid">
+        <div class="card menu-card menu-searchable-card" data-menu-category="pastries">
+          <div class="menu-card-header">
+            <h3>Butter Croissant</h3>
+            <span class="price">৩০০ ৳</span>
+          </div>
+          <p>ফ্রেন্স রেসিপিতে তৈরি ক্রিস্পি ও খাস্তা গোল্ডেন বাটার ক্রোয়াসোঁ।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Butter Croissant" data-price="300">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Butter Croissant', 300)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+
+        <div class="card menu-card menu-searchable-card" data-menu-category="pastries">
+          <div class="menu-card-header">
+            <h3>Blueberry Muffin</h3>
+            <span class="price">৩৫০ ৳</span>
+          </div>
+          <p>তাজা ব্লুবেরি এবং হালকা ভ্যানিলা ফ্লেভারে পরিপূর্ণ নরম মাফিন।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Blueberry Muffin" data-price="350">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Blueberry Muffin', 350)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+
+        <div class="card menu-card menu-searchable-card" data-menu-category="pastries">
+          <div class="menu-card-header">
+            <h3>Cinnamon Roll</h3>
+            <span class="price">৪০০ ৳</span>
+          </div>
+          <p>দারুচিনির মিষ্টি সুবাস ও ক্রিমি গ্লেজড আইসিংযুক্ত সিনামন রোল।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Cinnamon Roll" data-price="400">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Cinnamon Roll', 400)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+
+        <div class="card menu-card menu-searchable-card" data-menu-category="pastries">
+          <div class="menu-card-header">
+            <h3>Choc Chip Cookie</h3>
+            <span class="price">২৫০ ৳</span>
+          </div>
+          <p>চকলেট চাংক ভর্তি ও ক্রাঞ্চি টেক্সচারের আমেরিকান কুকি।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Choc Chip Cookie" data-price="250">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Choc Chip Cookie', 250)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+
+        <div class="card menu-card menu-searchable-card" data-menu-category="pastries">
+          <div class="menu-card-header">
+            <h3>Artisan Scone</h3>
+            <span class="price">৩০০ ৳</span>
+          </div>
+          <p>কফি বা চায়ের সাথে পারফেক্ট ঐতিহ্যবাহী ইংলিশ স্কোন।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Artisan Scone" data-price="300">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Artisan Scone', 300)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+
+        <div class="card menu-card menu-searchable-card" data-menu-category="pastries">
+          <div class="menu-card-header">
+            <h3>Danish Fruit Pastry</h3>
+            <span class="price">৩৫০ ৳</span>
+          </div>
+          <p>ফ্রুট ফিলিং ও কাস্টার্ড টপিংযুক্ত সুস্বাদু ডেনিশ পেস্ট্রি।</p>
+          <div class="card-order-actions">
+            <button type="button" class="btn-add-to-cart-action btn-add-cart" data-name="Danish Fruit Pastry" data-price="350">
+              🛒 ব্যাগে যোগ
+            </button>
+            <button type="button" class="btn-quick-direct-order" onclick="window.quickDirectOrder('Danish Fruit Pastry', 350)">
+              ⚡ দ্রুত অর্ডার
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Order Tracker Section in Menu Page -->
+  <section class="container order-tracker-section" id="menuOrderTrackerSection" style="margin-bottom: 2rem;">
+    <div class="tracker-header">
+      <span class="tracker-badge-pill">📦 Real-Time Order Updates</span>
+      <h2 class="tracker-title">লাইভ অর্ডার ট্র্যাকার (Live Order Tracker)</h2>
+      <p class="tracker-subtitle">
+        আপনার অর্ডার করা কফি ও খাবারের বর্তমান প্রস্তুতি, বেকিং ও ডেলিভারি স্ট্যাটাস সরাসরি ট্র্যাক করুন
+      </p>
+    </div>
+
+    <!-- Search Form -->
+    <form class="order-tracker-search-bar" id="orderTrackerSearchForm">
+      <input 
+        type="text" 
+        id="orderTrackerSearchInput" 
+        class="order-tracker-search-input" 
+        placeholder="অর্ডার আইডি (যেমন: #849201) বা মোবাইল নম্বর লিখুন..." 
+        aria-label="Search Order ID"
+      >
+      <button type="submit" class="btn-tracker-search">
+        🔍 অর্ডার ট্র্যাক করুন
+      </button>
+      <button type="button" class="btn btn-secondary" onclick="window.trackOrderDemo()" style="border-radius: 6px; font-weight: 700;">
+        🧪 ডেমো টেস্ট
+      </button>
+    </form>
+
+    <!-- Dynamic Order Card Container -->
+    <div id="orderTrackerContainer"></div>
+  </section>
+
+  <!-- Loyalty Card Membership Callout -->
+  <section class="container">
+    <div class="loyalty-banner" style="margin-top: 1rem;">
+      <div class="loyalty-grid">
+        <div class="loyalty-info">
+          <span class="loyalty-tag">✨ VIP Coffee Club</span>
+          <h2>প্রতিটি কফিতে স্টার অর্জন করুন</h2>
+          <p>মেম্বার হলে পাচ্ছেন সব কফি বিন্স ও পেস্ট্রিতে ১৫% ছাড়, ১০টি স্টারে ১টি ফ্রি কফি এবং বার্থডে স্পেশাল রিওয়ার্ড!</p>
+          <div class="loyalty-actions">
+            <a href="index.html#loyaltySection" class="btn-loyalty" style="text-decoration: none;">
+              💳 ফ্রি ডিজিটাল কার্ড সংগ্রহ করুন
+            </a>
+            <a href="index.html#faqSection" class="btn-loyalty-outline" style="text-decoration: none;">
+              ❓ FAQ ও নিয়মাবলী
+            </a>
+          </div>
+        </div>
+        <div class="loyalty-card-visual">
+          <div class="card-top-row">
+            <div class="card-brand-logo">☕ LOCAL COFFEE CLUB</div>
+            <div class="card-chip"></div>
+          </div>
+          <div class="card-number">•••• •••• •••• 8492</div>
+          <div class="card-bottom-row">
+            <div class="card-holder-info">
+              <span class="card-label-small">VIP MEMBER REWARDS</span>
+              <span class="card-holder-name">MERAJUL COFFEE CLUB</span>
+            </div>
+            <span class="card-tier-badge">GOLD ROASTER</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/owner_merajul_islam.jpg" alt="Owner Merajul Islam" class="owner-img" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold);" referrerpolicy="no-referrer">
+        <div>
+          <h3 style="font-size: 1.05rem; margin: 0;">☕ আপনার অর্ডার ব্যাগ</h3>
+          <span style="font-size: 0.72rem; color: #FFF8DC; font-weight: 600;">মালিক: মেরাজুল ইসলাম (01339564967)</span>
+        </div>
+      </div>
+      <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="coupon-group">
+        <input type="text" id="couponCodeInput" placeholder="প্রোমোকোড লিখুন (e.g. COFFEE20)">
+        <button type="button" class="btn btn-sm" id="applyCouponBtn">Apply</button>
+      </div>
+      <div class="cart-summary-line">
+        <span>সাবটোটাল (Subtotal):</span>
+        <strong id="cartSubtotal">০ ৳</strong>
+      </div>
+      <div class="cart-summary-line" style="color: #27AE60;">
+        <span>ডিসকাউন্ট (Discount):</span>
+        <strong id="cartDiscount">-০ ৳</strong>
+      </div>
+      <div class="cart-summary-line total">
+        <span>সর্বমোট (Total):</span>
+        <strong id="cartTotal">০ ৳</strong>
+      </div>
+      <button type="button" class="btn" id="checkoutBtn" style="width: 100%; margin-top: 0.75rem;">
+        অর্ডার কনফার্ম করুন (Checkout)
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Local Coffee Shop. All rights reserved. | Owner: <strong>MERAJUL ISLAM (from Brahmanbaria)</strong> | 📞 Hotline: <a href="tel:01339564967" style="color: #FFF8DC; font-weight: 700;">01339564967</a></p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script type="module" src="/script.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'bn', includedLanguages: 'bn,en,hi,ar,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

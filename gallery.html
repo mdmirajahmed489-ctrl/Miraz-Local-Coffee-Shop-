@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery | Local Coffee Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Special Discount Banner -->
+  <div class="discount-banner" id="discountBanner">
+    <span>🎉 <strong>স্পেশাল অফার!</strong> সব কফি ও পেস্ট্রিতে ২০% ডিসকাউন্ট পেতে ব্যবহার করুন কোড: <strong>COFFEE20</strong></span>
+    <button type="button" class="banner-btn banner-order-btn">অর্ডার করুন (Order Now)</button>
+    <button type="button" class="banner-close" id="bannerCloseBtn" title="Dismiss Banner">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand-group">
+      <a href="index.html" class="logo">☕ Local Coffee Shop</a>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openSiteEditor('tabGallery'); return false;">⚙️ ওয়েবসাইট কাস্টমাইজ করুন (Customize Site)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleInlineEditMode(); return false;"><span class="edit-mode-status-text">✏️ এডিট মোড: বন্ধ (চালু করতে ক্লিক করুন)</span></a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openOrderTracker(); return false;">📦 Live Order Tracker (অর্ডার ট্র্যাকিং)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openPastOrdersModal(); return false;">📜 Past Orders (অর্ডারের ইতিহাস)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleAiBaristaChat(); return false;">🤖 এআই বারিস্টা ও ভয়েস অ্যাসিস্ট্যান্ট (AI Barista)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleSiteTheme(); return false;"><span class="mobile-theme-text">🌙 ডার্ক মোড চালু করুন (Theme)</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <!-- Google Translate Container -->
+      <div id="google_translate_element" style="display: inline-block; margin-left: 10px;"></div>
+      <button type="button" class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme">🌙</button>
+      <button type="button" class="nav-tracker-btn" onclick="window.openOrderTracker()" title="আপনার লাইভ অর্ডার ট্র্যাক করুন">
+        📦 <span class="nav-btn-text">Track Order</span>
+      </button>
+      <button type="button" class="nav-cart-btn">
+        🛒 <span class="nav-btn-text">Cart</span> <span class="cart-badge">0</span>
+      </button>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </nav>
+
+  <section class="container">
+    <!-- Section Quick Edit Banner (Visible in Edit Mode) -->
+    <div class="section-edit-banner">
+      <span>✏️ ফটো গ্যালারি কাস্টমাইজেশন মোড</span>
+      <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabGallery')">
+        ✏️ গ্যালারি ছবি পরিবর্তন ও নতুন ছবি যোগ (Edit Gallery)
+      </button>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 2rem;">
+      <div>
+        <h1 class="section-title" style="text-align: left; margin-bottom: 4px;">Photo Gallery</h1>
+        <p class="section-subtitle" style="text-align: left; margin-bottom: 0;">আমাদের ক্যাফের মনোরম মুহূর্ত, তাজা রোস্টেড কফি এবং পেস্ট্রির কিছু চিত্র</p>
+      </div>
+      <button type="button" class="btn btn-sm" onclick="window.openSiteEditor('tabGallery')" style="background: var(--accent-gold); color: #2C1810; font-weight: 800;">
+        🖼️ ছবি যোগ / পরিবর্তন করুন
+      </button>
+    </div>
+    
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Fresh Latte Art">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Cozy Coffee Shop Ambiance">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Pour Over Brewing">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Espresso Extraction">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Fresh Baked Croissants">
+      <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=600&q=80" alt="Warm Cozy Seating Area">
+    </div>
+  </section>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/owner_merajul_islam.jpg" alt="Owner Merajul Islam" class="owner-img" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold);" referrerpolicy="no-referrer">
+        <div>
+          <h3 style="font-size: 1.05rem; margin: 0;">☕ আপনার অর্ডার ব্যাগ</h3>
+          <span style="font-size: 0.72rem; color: #FFF8DC; font-weight: 600;">মালিক: মেরাজুল ইসলাম (01339564967)</span>
+        </div>
+      </div>
+      <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="coupon-group">
+        <input type="text" id="couponCodeInput" placeholder="প্রোমোকোড (e.g. COFFEE20)">
+        <button type="button" class="btn btn-sm" id="applyCouponBtn">Apply</button>
+      </div>
+      <div class="cart-summary-line">
+        <span>সাবটোটাল:</span>
+        <strong id="cartSubtotal">০ ৳</strong>
+      </div>
+      <div class="cart-summary-line" style="color: #27AE60;">
+        <span>ডিসকাউন্ট:</span>
+        <strong id="cartDiscount">-০ ৳</strong>
+      </div>
+      <div class="cart-summary-line total">
+        <span>সর্বমোট:</span>
+        <strong id="cartTotal">০ ৳</strong>
+      </div>
+      <button type="button" class="btn" id="checkoutBtn" style="width: 100%; margin-top: 0.75rem;">
+        অর্ডার কনফার্ম করুন (Checkout)
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Local Coffee Shop. All rights reserved. | Owner: <strong>MERAJUL ISLAM (from Brahmanbaria)</strong> | 📞 Hotline: <a href="tel:01339564967" style="color: #FFF8DC; font-weight: 700;">01339564967</a></p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script type="module" src="/script.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'bn', includedLanguages: 'bn,en,hi,ar,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

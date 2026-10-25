@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Reservations | Local Coffee Shop</title>
+  <script type="module" crossorigin src="script.js"></script>
+  <link rel="stylesheet" crossorigin href="style.css">
+</head>
+<body>
+  <!-- Special Discount Banner -->
+  <div class="discount-banner" id="discountBanner">
+    <span>🎉 <strong>স্পেশাল অফার!</strong> সব কফি ও পেস্ট্রিতে ২০% ডিসকাউন্ট পেতে ব্যবহার করুন কোড: <strong>COFFEE20</strong></span>
+    <button type="button" class="banner-btn banner-order-btn">অর্ডার করুন (Order Now)</button>
+    <button type="button" class="banner-close" id="bannerCloseBtn" title="Dismiss Banner">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand-group">
+      <a href="index.html" class="logo">☕ Local Coffee Shop</a>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openSiteEditor('tabContact'); return false;">⚙️ ওয়েবসাইট কাস্টমাইজ করুন (Customize Site)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleInlineEditMode(); return false;"><span class="edit-mode-status-text">✏️ এডিট মোড: বন্ধ (চালু করতে ক্লিক করুন)</span></a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openOrderTracker(); return false;">📦 Live Order Tracker (অর্ডার ট্র্যাকিং)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openPastOrdersModal(); return false;">📜 Past Orders (অর্ডারের ইতিহাস)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleAiBaristaChat(); return false;">🤖 এআই বারিস্টা ও ভয়েস অ্যাসিস্ট্যান্ট (AI Barista)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleSiteTheme(); return false;"><span class="mobile-theme-text">🌙 ডার্ক মোড চালু করুন (Theme)</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <!-- Google Translate Container -->
+      <div id="google_translate_element" style="display: inline-block; margin-left: 10px;"></div>
+      <button type="button" class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme">🌙</button>
+      <button type="button" class="nav-tracker-btn" onclick="window.openOrderTracker()" title="আপনার লাইভ অর্ডার ট্র্যাক করুন">
+        📦 <span class="nav-btn-text">Track Order</span>
+      </button>
+      <button type="button" class="nav-cart-btn">
+        🛒 <span class="nav-btn-text">Cart</span> <span class="cart-badge">0</span>
+      </button>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </nav>
+
+  <section class="container">
+    <!-- Section Quick Edit Banner (Visible in Edit Mode) -->
+    <div class="section-edit-banner">
+      <span>✏️ যোগাযোগ তথ্য ও ঠিকানা কাস্টমাইজেশন মোড</span>
+      <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabContact')">
+        ✏️ ঠিকানা, ফোন ও সময় পরিবর্তন করুন (Edit Contact)
+      </button>
+    </div>
+
+    <div class="grid grid-2" style="align-items: start; margin-bottom: 2.5rem;">
+      <!-- Contact Form -->
+      <div class="card">
+        <h2 style="color: var(--primary); margin-bottom: 0.5rem;">Send Us a Message</h2>
+        <p style="color: var(--dark-soft); margin-bottom: 1.2rem; font-size: 0.95rem;">যেকোনো প্রশ্ন, ক্যাটারিং বা মতামতের জন্য আমাদের বার্তা পাঠান।</p>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="cName">Your Name (নাম)*</label>
+            <input type="text" id="cName" required placeholder="আপনার পুরো নাম">
+          </div>
+          <div class="form-group">
+            <label for="cEmail">Email Address (ইমেইল)*</label>
+            <input type="email" id="cEmail" required placeholder="your.email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="cSubject">Subject (বিষয়)</label>
+            <input type="text" id="cSubject" placeholder="যেমন: ইভেন্ট বুকিং / ফিডব্যাক">
+          </div>
+          <div class="form-group">
+            <label for="cMessage">Message (বার্তা)*</label>
+            <textarea id="cMessage" rows="5" required placeholder="আপনার বার্তাটি এখানে লিখুন..."></textarea>
+          </div>
+          <button type="submit" class="btn" style="width: 100%; font-weight: 800; font-size: 1rem; padding: 12px; background: var(--primary); color: #FFF;">
+            🚀 Send Message (বার্তা পাঠান)
+          </button>
+        </form>
+
+        <!-- Sent Messages History Box for Customers -->
+        <div id="sentMessagesContainer" style="margin-top: 1.5rem; display: none; border-top: 2px dashed var(--accent-gold); padding-top: 1.2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <h4 style="margin: 0; color: var(--primary); font-size: 1rem; display: flex; align-items: center; gap: 6px;">
+              📬 আপনার প্রেরিত বার্তাসমূহ (<span id="sentMsgCount">0</span>)
+            </h4>
+            <span style="font-size: 0.75rem; background: rgba(39, 174, 96, 0.15); color: #27AE60; font-weight: 700; padding: 3px 8px; border-radius: 9999px;">
+              ✅ ওনারের কাছে সংরক্ষিত
+            </span>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--dark-soft); margin-bottom: 10px;">
+            আপনার প্রেরিত সকল বার্তা ওনার <strong>মেরাজুল ইসলাম (01339564967)</strong>-এর নিকট নিরাপদে জমা রয়েছে:
+          </p>
+          <div id="sentMessagesList" style="display: flex; flex-direction: column; gap: 10px;"></div>
+        </div>
+      </div>
+
+      <!-- Visit & Location Info -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <h2 style="color: var(--primary); margin: 0;">Visit Our Coffee House</h2>
+          <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabContact')">✏️ এডিট</button>
+        </div>
+        <p style="color: var(--dark-soft); margin-bottom: 1.2rem;">স্বশরীরে এসে উপভোগ করুন আমাদের তাজা রোস্ট কফির সুবাস ও মনোরম পরিবেশ।</p>
+        
+        <p style="margin-bottom: 0.8rem;">
+          📍 <strong>ঠিকানা:</strong><br>
+          <span class="address-text-display">123 Coffee Street, Central Avenue, City, State 12345</span>
+        </p>
+
+        <p style="margin-bottom: 0.8rem;">
+          📞 <strong>ফোন (Phone / Hotline):</strong><br>
+          <a href="tel:01339564967" class="hotline-text-display" style="color: var(--primary); font-weight: 700; font-size: 1.15rem; text-decoration: none;">01339564967</a>
+        </p>
+
+        <p style="margin-bottom: 0.8rem;">
+          ✉️ <strong>ইমেইল:</strong><br>
+          <span class="email-text-display">contact@localcoffeeshop.com</span>
+        </p>
+
+        <p style="margin-bottom: 1.2rem;">
+          👑 <strong>মালিক ও প্রতিষ্ঠাতা (Owner):</strong><br>
+          <strong class="owner-name-display">MERAJUL ISLAM</strong> (from <span class="owner-district-display">Brahmanbaria / ব্রাহ্মণবাড়িয়া</span>)
+        </p>
+
+        <div style="background: var(--secondary); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px dashed var(--border-color);">
+          <h4 style="margin-bottom: 6px; color: var(--dark);">Looking for Table Reservation & FAQ?</h4>
+          <p style="font-size: 0.9rem; color: var(--dark-soft); margin-bottom: 10px;">আমাদের হোমপেজ থেকে পছন্দের সময়ে টেবিল রিজার্ভেশন, লয়্যালটি মেম্বারশিপ কার্ড ও সচরাচর প্রশ্নের উত্তর দেখুন।</p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <a href="index.html#bookingSection" class="btn btn-sm">Reserve Table &rarr;</a>
+            <a href="index.html#faqSection" class="btn btn-sm btn-secondary">Read FAQ &rarr;</a>
+            <a href="index.html#loyaltySection" class="btn btn-sm btn-secondary">VIP Club &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/owner_merajul_islam.jpg" alt="Owner Merajul Islam" class="owner-img" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold);" referrerpolicy="no-referrer">
+        <div>
+          <h3 style="font-size: 1.05rem; margin: 0;">☕ আপনার অর্ডার ব্যাগ</h3>
+          <span style="font-size: 0.72rem; color: #FFF8DC; font-weight: 600;">মালিক: মেরাজুল ইসলাম (01339564967)</span>
+        </div>
+      </div>
+      <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="coupon-group">
+        <input type="text" id="couponCodeInput" placeholder="প্রোমোকোড (e.g. COFFEE20)">
+        <button type="button" class="btn btn-sm" id="applyCouponBtn">Apply</button>
+      </div>
+      <div class="cart-summary-line">
+        <span>সাবটোটাল:</span>
+        <strong id="cartSubtotal">০ ৳</strong>
+      </div>
+      <div class="cart-summary-line" style="color: #27AE60;">
+        <span>ডিসকাউন্ট:</span>
+        <strong id="cartDiscount">-০ ৳</strong>
+      </div>
+      <div class="cart-summary-line total">
+        <span>সর্বমোট:</span>
+        <strong id="cartTotal">০ ৳</strong>
+      </div>
+      <button type="button" class="btn" id="checkoutBtn" style="width: 100%; margin-top: 0.75rem;">
+        অর্ডার কনফার্ম করুন (Checkout)
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Local Coffee Shop. All rights reserved. | Owner: <strong>MERAJUL ISLAM (from Brahmanbaria)</strong> | 📞 Hotline: <a href="tel:01339564967" style="color: #FFF8DC; font-weight: 700;">01339564967</a></p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script type="module" src="/script.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'bn', includedLanguages: 'bn,en,hi,ar,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Local Coffee Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Special Discount Banner -->
+  <div class="discount-banner" id="discountBanner">
+    <span>🎉 <strong>স্পেশাল অফার!</strong> সব কফি ও পেস্ট্রিতে ২০% ডিসকাউন্ট পেতে ব্যবহার করুন কোড: <strong>COFFEE20</strong></span>
+    <button type="button" class="banner-btn banner-order-btn">অর্ডার করুন (Order Now)</button>
+    <button type="button" class="banner-close" id="bannerCloseBtn" title="Dismiss Banner">&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand-group">
+      <a href="index.html" class="logo">☕ Local Coffee Shop</a>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openSiteEditor('tabStory'); return false;">⚙️ ওয়েবসাইট কাস্টমাইজ করুন (Customize Site)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleInlineEditMode(); return false;"><span class="edit-mode-status-text">✏️ এডিট মোড: বন্ধ (চালু করতে ক্লিক করুন)</span></a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openOrderTracker(); return false;">📦 Live Order Tracker (অর্ডার ট্র্যাকিং)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openPastOrdersModal(); return false;">📜 Past Orders (অর্ডারের ইতিহাস)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleAiBaristaChat(); return false;">🤖 এআই বারিস্টা ও ভয়েস অ্যাসিস্ট্যান্ট (AI Barista)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleSiteTheme(); return false;"><span class="mobile-theme-text">🌙 ডার্ক মোড চালু করুন (Theme)</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <!-- Google Translate Container -->
+      <div id="google_translate_element" style="display: inline-block; margin-left: 10px;"></div>
+      <button type="button" class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme">🌙</button>
+      <button type="button" class="nav-tracker-btn" onclick="window.openOrderTracker()" title="আপনার লাইভ অর্ডার ট্র্যাক করুন">
+        📦 <span class="nav-btn-text">Track Order</span>
+      </button>
+      <button type="button" class="nav-cart-btn">
+        🛒 <span class="nav-btn-text">Cart</span> <span class="cart-badge">0</span>
+      </button>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </nav>
+
+  <section class="container">
+    <!-- Section Quick Edit Banner (Visible in Edit Mode) -->
+    <div class="section-edit-banner">
+      <span>✏️ আমাদের গল্প ও ৫০+ স্টাফ কাস্টমাইজেশন মোড</span>
+      <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabStory')">
+        ✏️ স্টোরি ও কর্মী সংখ্যা পরিবর্তন করুন (Edit Story & Staff)
+      </button>
+    </div>
+
+    <div class="card" style="margin-bottom: 2.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+        <h2 style="color: var(--primary); margin: 0;" id="storyTitleDisplay">Our Story (আমাদের গল্প)</h2>
+        <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabStory')">✏️ গল্প এডিট</button>
+      </div>
+      <p id="storyP1Display">২০২৬ সালে ছোট একটি কাঠের কফি কার্ট থেকে আমাদের স্বপ্নের যাত্রা শুরু হয়েছিল। প্রতিষ্ঠাতাদের একটিই পণ ছিল—প্রতিটি কাপ কফিতে সর্বোচ্চ গুণগত মান, তাজা রোস্টিং এবং স্থানীয় মানুষের জন্য একটি উষ্ণ ও আন্তরিক মিলনমেলা তৈরি করা। লোকাল কফি শপ আজ এলাকার সব বয়সের মানুষের প্রিয় আড্ডার স্থান।</p>
+      
+      <h2 style="color: var(--primary); margin-top: 2rem; margin-bottom: 0.8rem;">Our Mission (আমাদের লক্ষ্য)</h2>
+      <ul style="margin-left: 24px; color: var(--dark);">
+        <li style="margin-bottom: 8px;"><strong>১০০% খাঁটি ও সেরা কফি বিন্স:</strong> সরাসরি নির্বাচিত কৃষকদের থেকে সংগৃহীত এথিক্যাল ও অর্গানিক অ্যারাবিকা।</li>
+        <li style="margin-bottom: 8px;"><strong>প্রতিদিনের ফ্রেশ বেকিং:</strong> কৃত্রিম উপাদানমুক্ত স্বাস্থ্যকর ও সুস্বাদু পেস্ট্রি।</li>
+        <li style="margin-bottom: 8px;"><strong>কমিউনিটি ও আন্তরিকতা:</strong> বন্ধুত্ব, পড়াশোনা ও কাজ করার জন্য আরামদায়ক ক্যাফে পরিবেশ।</li>
+      </ul>
+    </div>
+
+    <!-- Owner Spotlight: MERAJUL ISLAM -->
+    <div class="owner-section">
+      <div class="owner-grid">
+        <div class="owner-image-wrapper">
+          <div class="owner-img-container" id="ownerImgClickTrigger" title="ছবি পরিবর্তন করতে ক্লিক করুন (Click to Change Photo)">
+            <img src="/owner_merajul_islam.jpg" alt="Owner MERAJUL ISLAM from Brahmanbaria" class="owner-img" id="ownerProfileImg" referrerpolicy="no-referrer">
+            <div class="owner-photo-edit-badge" id="openPhotoModalBadge" title="ছবি পরিবর্তন করুন (Change Photo)">📷</div>
+          </div>
+          <button type="button" class="btn-change-photo-sub" id="openPhotoModalBtn">
+            📷 ছবি পরিবর্তন করুন (Change Photo)
+          </button>
+        </div>
+        <div class="owner-details">
+          <span class="owner-badge">Owner & Visionary Founder</span>
+          <h2 class="owner-name-display">MERAJUL ISLAM</h2>
+          <p class="owner-origin" style="color: var(--accent-gold); font-weight: 700; font-size: 1.05rem; margin-bottom: 4px;">📍 From <span class="owner-district-display">Brahmanbaria (ব্রাহ্মণবাড়িয়া)</span></p>
+          <p class="owner-role">মালিক ও প্রধান কফি রোস্টার (Owner & Master Roaster from Brahmanbaria)</p>
+          <p id="storyP2Display">ব্রাহ্মণবাড়িয়ার কৃতি সন্তান মিরাজুল ইসলামের কফির প্রতি অদম্য ভালোবাসা এবং বিশ্বমানের কফি কালচার তৈরির স্বপ্ন থেকেই আজকের "লোকাল কফি শপ"। তিনি বিশ্বমানের রোস্টিং কৌশল ও ব্লেন্ডিং উদ্ভাবনে বিশেষজ্ঞ।</p>
+          <div class="owner-quote" id="ownerQuoteDisplay">
+            "আমাদের কাছে প্রতিটি কফির কাপ কেবল একটি রেসিপি নয়; এটি ব্রাহ্মণবাড়িয়ার আতিথেয়তা এবং আমাদের ৫০ জনের পরিশ্রমী পরিবারের ভালোবাসা ও আন্তরিকতার প্রতিফলন।" — <strong>মিরাজুল ইসলাম (ব্রাহ্মণবাড়িয়া)</strong>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--dark-soft); margin-bottom: 12px;">তাঁর বলিষ্ঠ নেতৃত্বে বর্তমানে ৫০ জনের অধিক বিশেষজ্ঞ বারিস্তা, শেফ, বেকার ও সার্ভিস টিম নিরবচ্ছিন্নভাবে সেবা দিয়ে যাচ্ছেন।</p>
+          <!-- 100% Unlocked Direct Order Call-to-Actions -->
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="https://wa.me/8801339564967?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%20%E0%A6%AE%E0%A6%BF%E0%A6%B0%E0%A6%BE%E0%A6%9C%E0%A7%81%E0%A6%B2%20%E0%A6%AD%E0%A6%BE%E0%A6%87%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%B2%E0%A7%8B%E0%A6%95%E0%A6%BE%E0%A6%B2%20%E0%A6%95%E0%A6%AB%E0%A6%BF%20%E0%A6%B6%E0%A6%AA%20%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87%20%E0%A6%B8%E0%A6%B0%E0%A6%BE%E0%A6%B8%E0%A6%B0%E0%A6%BF%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener" class="btn btn-sm" style="background: #25D366; color: #ffffff; font-weight: bold; border-color: #25D366; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(37,211,102,0.35);">
+              💬 ওনারকে হোয়াটসঅ্যাপে সরাসরি অর্ডার করুন
+            </a>
+            <a href="tel:01339564967" class="btn btn-sm btn-secondary" style="display: inline-flex; align-items: center; gap: 6px; font-weight: bold;">
+              📞 সরাসরি ওনারকে কল করুন (01339564967)
+            </a>
+            <a href="menu.html" class="btn btn-sm" style="background: var(--accent-gold); color: #2C1810; font-weight: bold;">
+              ☕ মেনু দেখে ১-ক্লিকে অর্ডার
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 50+ Staff Members Section -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
+      <div>
+        <h2 class="section-title" style="text-align: left; margin-bottom: 4px;">আমাদের ৫০+ নিবেদিতপ্রাণ কর্মী দল (Our 50+ Staff Team)</h2>
+        <p class="section-subtitle" style="text-align: left; margin-bottom: 0;">আমাদের ক্যাফের প্রাণশক্তি হলো আমাদের ৫০ জনের সুপ্রশিক্ষিত ও আন্তরিক টিম মেম্বাররা</p>
+      </div>
+      <button type="button" class="btn btn-sm" onclick="window.openSiteEditor('tabStory')" style="background: var(--accent-gold); color: #2C1810; font-weight: 800;">
+        ⚙️ কর্মী সংখ্যা পরিবর্তন
+      </button>
+    </div>
+
+    <!-- Staff Department Counters -->
+    <div class="staff-stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="baristaCountDisplay">20+</div>
+        <div class="stat-label">Expert Baristas</div>
+        <div class="stat-desc">দক্ষ কফি মেকার ও লাতে আর্ট স্পেশালিস্ট</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="bakerCountDisplay">12+</div>
+        <div class="stat-label">Master Bakers</div>
+        <div class="stat-desc">আর্টিসান পেস্ট্রি ও ব্রেড শেফ</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="hospitalityCountDisplay">18+</div>
+        <div class="stat-label">Hospitality Crew</div>
+        <div class="stat-desc">স্মাইলিং কাস্টমার কেয়ার ও সার্ভিস টিম</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Coffee Roasters</div>
+        <div class="stat-desc">মাইক্রো-ব্যাচ রোস্টিং বিশেষজ্ঞ</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="totalStaffCountDisplay">50+</div>
+        <div class="stat-label">Total Staff</div>
+        <div class="stat-desc">কোয়ালিটি ও অপারেশন লিডার</div>
+      </div>
+    </div>
+
+    <!-- Key Department Leaders -->
+    <div class="team-leads-header-row">
+      <div>
+        <h3 style="margin: 0; font-size: 1.6rem; color: var(--dark);">Key Department Leads (টিম লিডারগণ)</h3>
+        <p style="font-size: 0.88rem; color: var(--dark-soft); margin-top: 4px;">মিরাজুল ইসলামের দক্ষ ও নিবেদিত টিম লিডারদের প্রোফাইল</p>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="btn-manage-leads" id="addNewLeadBtn">
+          ➕ নতুন লিডার যোগ করুন (Add Lead)
+        </button>
+        <button type="button" class="btn-manage-leads" id="openManageLeadsBtn" style="background: var(--primary); color: #FFFFFF; border-color: var(--primary);">
+          ✏️ টিম লিডার ম্যানেজ ও পরিবর্তন (Edit Leads)
+        </button>
+      </div>
+    </div>
+
+    <div class="grid grid-4" id="teamLeadsContainer" style="margin-top: 1rem;">
+      <!-- Dynamically rendered or fallback cards -->
+      <div class="team-lead-card" data-lead-id="lead_1">
+        <div class="team-lead-avatar-wrap" onclick="editSingleLead('lead_1')" title="ছবি বা তথ্য পরিবর্তন করতে ক্লিক করুন">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&h=300&q=80" alt="Jane Smith" class="profile-img">
+          <div class="lead-quick-edit-badge">✏️</div>
+        </div>
+        <div>
+          <h3>Jane Smith</h3>
+          <p style="color: var(--primary); font-weight: 600;">Head Barista</p>
+          <p style="font-size: 0.85rem; margin-top: 4px; color: var(--dark-soft);">২০ জন বারিস্তার প্রধান ট্রেইনার ও এসপ্রেসো স্পেশালিস্ট</p>
+        </div>
+        <button type="button" class="btn-card-edit-lead" onclick="editSingleLead('lead_1')">✏️ এডিট করুন (Edit Lead)</button>
+      </div>
+
+      <div class="team-lead-card" data-lead-id="lead_2">
+        <div class="team-lead-avatar-wrap" onclick="editSingleLead('lead_2')" title="ছবি বা তথ্য পরিবর্তন করতে ক্লিক করুন">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&h=300&q=80" alt="John Doe" class="profile-img">
+          <div class="lead-quick-edit-badge">✏️</div>
+        </div>
+        <div>
+          <h3>John Doe</h3>
+          <p style="color: var(--primary); font-weight: 600;">Master Baker</p>
+          <p style="font-size: 0.85rem; margin-top: 4px; color: var(--dark-soft);">১২ জন পেস্ট্রি শেফের প্রধান ও ক্রোয়াসোঁ মাস্টার</p>
+        </div>
+        <button type="button" class="btn-card-edit-lead" onclick="editSingleLead('lead_2')">✏️ এডিট করুন (Edit Lead)</button>
+      </div>
+
+      <div class="team-lead-card" data-lead-id="lead_3">
+        <div class="team-lead-avatar-wrap" onclick="editSingleLead('lead_3')" title="ছবি বা তথ্য পরিবর্তন করতে ক্লিক করুন">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&h=300&q=80" alt="Sarah Johnson" class="profile-img">
+          <div class="lead-quick-edit-badge">✏️</div>
+        </div>
+        <div>
+          <h3>Sarah Johnson</h3>
+          <p style="color: var(--primary); font-weight: 600;">General Manager</p>
+          <p style="font-size: 0.85rem; margin-top: 4px; color: var(--dark-soft);">ক্যাফে অপারেশনস ও কাস্টমার হসপিটালিটি হেড</p>
+        </div>
+        <button type="button" class="btn-card-edit-lead" onclick="editSingleLead('lead_3')">✏️ এডিট করুন (Edit Lead)</button>
+      </div>
+
+      <div class="team-lead-card" data-lead-id="lead_4">
+        <div class="team-lead-avatar-wrap" onclick="editSingleLead('lead_4')" title="ছবি বা তথ্য পরিবর্তন করতে ক্লিক করুন">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&h=300&q=80" alt="Tanvir Ahmed" class="profile-img">
+          <div class="lead-quick-edit-badge">✏️</div>
+        </div>
+        <div>
+          <h3>Tanvir Ahmed</h3>
+          <p style="color: var(--primary); font-weight: 600;">Lead Roaster</p>
+          <p style="font-size: 0.85rem; margin-top: 4px; color: var(--dark-soft);">গ্রিন বিন সোর্সিং ও রোস্ট প্রোফাইল ডিজাইনার</p>
+        </div>
+        <button type="button" class="btn-card-edit-lead" onclick="editSingleLead('lead_4')">✏️ এডিট করুন (Edit Lead)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/owner_merajul_islam.jpg" alt="Owner Merajul Islam" class="owner-img" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold);" referrerpolicy="no-referrer">
+        <div>
+          <h3 style="font-size: 1.05rem; margin: 0;">☕ আপনার অর্ডার ব্যাগ</h3>
+          <span style="font-size: 0.72rem; color: #FFF8DC; font-weight: 600;">মালিক: মেরাজুল ইসলাম (01339564967)</span>
+        </div>
+      </div>
+      <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="coupon-group">
+        <input type="text" id="couponCodeInput" placeholder="প্রোমোকোড (e.g. COFFEE20)">
+        <button type="button" class="btn btn-sm" id="applyCouponBtn">Apply</button>
+      </div>
+      <div class="cart-summary-line">
+        <span>সাবটোটাল:</span>
+        <strong id="cartSubtotal">০ ৳</strong>
+      </div>
+      <div class="cart-summary-line" style="color: #27AE60;">
+        <span>ডিসকাউন্ট:</span>
+        <strong id="cartDiscount">-০ ৳</strong>
+      </div>
+      <div class="cart-summary-line total">
+        <span>সর্বমোট:</span>
+        <strong id="cartTotal">০ ৳</strong>
+      </div>
+      <button type="button" class="btn" id="checkoutBtn" style="width: 100%; margin-top: 0.75rem;">
+        অর্ডার কনফার্ম করুন (Checkout)
+      </button>
+    </div>
+  </div>
+
+  <!-- Team Lead Edit / Manage Modal -->
+  <div class="custom-modal-overlay" id="teamLeadModalOverlay">
+    <div class="custom-modal" style="max-width: 520px;">
+      <span class="modal-icon">👥</span>
+      <h3 class="modal-title" id="teamLeadModalTitle">টিম লিডার তথ্য ও ছবি পরিবর্তন</h3>
+      <p style="color: var(--dark-soft); font-size: 0.9rem; margin-bottom: 1rem;">ডিপার্টমেন্ট লিডারের নাম, পদবী, দায়িত্বের বিবরণ ও প্রোফাইল ছবি আপডেট করুন।</p>
+
+      <form id="teamLeadEditForm">
+        <!-- Lead Selector (to switch between leaders or create new) -->
+        <div class="form-group" style="text-align: left;">
+          <label for="leadSelectorSelect">কোন টিম লিডারকে এডিট করবেন? (Select Leader)*</label>
+          <select id="leadSelectorSelect" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--secondary); color: var(--dark); font-weight: 600;">
+            <!-- Populated dynamically -->
+          </select>
+        </div>
+
+        <!-- Live Photo Preview -->
+        <div style="text-align: center; margin: 0.8rem 0;">
+          <img id="leadModalPhotoPreview" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&h=300&q=80" alt="Lead Preview" class="photo-preview-circle">
+          <span style="font-size: 0.78rem; color: var(--dark-soft);">লাইভ প্রোফাইল প্রিভিউ (Live Preview)</span>
+        </div>
+
+        <!-- File Upload Dropzone -->
+        <div class="photo-upload-dropzone" id="leadPhotoDropzone" style="padding: 1.2rem; margin-bottom: 0.8rem;">
+          <div style="font-size: 1.8rem; margin-bottom: 4px;">📁</div>
+          <strong style="color: var(--dark); font-size: 0.9rem;">নতুন ছবি আপলোড করুন</strong>
+          <p style="font-size: 0.78rem; color: var(--dark-soft); margin-top: 2px;">ফাইল এখানে টেনে আনুন বা ক্লিক করে নির্বাচন করুন (JPG, PNG)</p>
+          <input type="file" id="leadPhotoFileInput" accept="image/*" style="display: none;">
+        </div>
+
+        <!-- Image URL -->
+        <div class="form-group" style="text-align: left; margin-bottom: 0.8rem;">
+          <label for="leadPhotoUrlInput" style="font-size: 0.85rem;">অথবা ছবির সরাসরি ওয়েব লিংক দিন (Image URL):</label>
+          <input type="url" id="leadPhotoUrlInput" placeholder="https://images.unsplash.com/... or image link">
+        </div>
+
+        <!-- Name Input -->
+        <div class="form-group" style="text-align: left;">
+          <label for="leadNameInput">লিডারের নাম (Full Name)*</label>
+          <input type="text" id="leadNameInput" placeholder="যেমন: Jane Smith বা তানজিম আহমেদ" required>
+        </div>
+
+        <!-- Role / Designation -->
+        <div class="form-group" style="text-align: left;">
+          <label for="leadRoleInput">পদবী / ডিপার্টমেন্ট (Role / Designation)*</label>
+          <input type="text" id="leadRoleInput" placeholder="যেমন: Head Barista, Master Baker, Floor Manager" required>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group" style="text-align: left;">
+          <label for="leadDescInput">দায়িত্ব ও সংক্ষিপ্ত বিবরণ (Description)*</label>
+          <textarea id="leadDescInput" rows="2" placeholder="যেমন: ২০ জন বারিস্তার প্রধান ট্রেইনার ও এসপ্রেসো স্পেশালিস্ট" required></textarea>
+        </div>
+
+        <!-- Action buttons -->
+        <div style="display: flex; gap: 8px; margin-top: 1.2rem; flex-wrap: wrap;">
+          <button type="submit" class="btn" id="saveLeadBtn" style="flex: 2; min-width: 140px; padding: 0.8rem;">
+            💾 সংরক্ষণ করুন (Save Lead)
+          </button>
+          <button type="button" class="btn btn-secondary" id="deleteLeadBtn" style="flex: 1; min-width: 100px; padding: 0.8rem; color: #E74C3C;" title="এই লিডারকে তালিকা থেকে মুছে ফেলুন">
+            🗑️ মুছুন
+          </button>
+          <button type="button" class="btn btn-secondary" id="resetAllLeadsBtn" style="padding: 0.8rem;" title="ডিফল্ট টিম মেম্বারদের রিস্টোর করুন">
+            🔄 রিস্টোর টিম
+          </button>
+        </div>
+      </form>
+
+      <button type="button" class="btn btn-secondary" id="teamLeadModalCloseBtn" style="width: 100%; margin-top: 8px;">
+        বাতিল করুন (Cancel)
+      </button>
+    </div>
+  </div>
+
+  <!-- Owner Photo Change Modal -->
+  <div class="custom-modal-overlay" id="photoModalOverlay">
+    <div class="custom-modal" style="max-width: 480px;">
+      <span class="modal-icon">📷</span>
+      <h3 class="modal-title">মালিকের ছবি পরিবর্তন করুন</h3>
+      <p style="color: var(--dark-soft); font-size: 0.9rem; margin-bottom: 1rem;">মিরাজুল ইসলাম (মালিক)-এর নতুন ছবি আপলোড করুন অথবা ছবির লিংক দিন।</p>
+
+      <!-- Live Circular Preview -->
+      <div style="text-align: center; margin-bottom: 1.2rem;">
+        <img id="photoModalPreview" src="/owner_merajul_islam.jpg" alt="Preview" class="photo-preview-circle">
+        <span style="font-size: 0.78rem; color: var(--dark-soft);">লাইভ প্রিভিউ (Live Preview)</span>
+      </div>
+
+      <!-- File Drag and Drop Zone -->
+      <div class="photo-upload-dropzone" id="photoDropzone">
+        <div style="font-size: 2.2rem; margin-bottom: 6px;">📁</div>
+        <strong style="color: var(--dark); font-size: 0.95rem;">মোবাইল বা কম্পিউটার থেকে ছবি আপলোড করুন</strong>
+        <p style="font-size: 0.82rem; color: var(--dark-soft); margin-top: 4px;">ছবি এখানে টেনে আনুন বা ক্লিক করে ফাইল সিলেক্ট করুন (JPG, PNG, WebP)</p>
+        <input type="file" id="ownerPhotoInput" accept="image/*" style="display: none;">
+      </div>
+
+      <!-- URL Input Alternative -->
+      <div class="form-group" style="text-align: left; margin-top: 1rem;">
+        <label for="ownerPhotoUrlInput" style="font-size: 0.88rem;">অথবা ছবির সরাসরি ওয়েব লিংক দিন (Image URL):</label>
+        <input type="url" id="ownerPhotoUrlInput" placeholder="https://example.com/my-photo.jpg">
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-top: 1.2rem;">
+        <button type="button" class="btn" id="savePhotoBtn" style="flex: 1; padding: 0.75rem;">
+          💾 সংরক্ষণ করুন (Save Photo)
+        </button>
+        <button type="button" class="btn btn-secondary" id="resetPhotoBtn" style="padding: 0.75rem;" title="ডিফল্ট ছবিতে ফিরে যান">
+          🔄 রিসেট (Reset)
+        </button>
+      </div>
+      <button type="button" class="btn btn-secondary" id="photoModalCloseBtn" style="width: 100%; margin-top: 8px;">
+        বাতিল করুন (Cancel)
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Local Coffee Shop. All rights reserved. | Owner: <strong>MERAJUL ISLAM (from Brahmanbaria)</strong> | 📞 Hotline: <a href="tel:01339564967" style="color: #FFF8DC; font-weight: 700;">01339564967</a></p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script type="module" src="/script.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'bn', includedLanguages: 'bn,en,hi,ar,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

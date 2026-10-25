@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Coffee Shop & Bakery | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Special Discount Banner -->
+  <div class="discount-banner" id="discountBanner">
+    <span>🎉 <strong>স্পেশাল অফার!</strong> সব কফি ও পেস্ট্রিতে ২০% ডিসকাউন্ট পেতে ব্যবহার করুন কোড: <strong>COFFEE20</strong></span>
+    <button type="button" class="banner-btn banner-order-btn">অর্ডার করুন (Order Now)</button>
+    <button type="button" class="banner-close" id="bannerCloseBtn" title="Dismiss Banner">&times;</button>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand-group">
+      <a href="index.html" class="logo">☕ Local Coffee Shop</a>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openSiteEditor('tabGeneral'); return false;">⚙️ ওয়েবসাইট কাস্টমাইজ করুন (Customize Site)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleInlineEditMode(); return false;"><span class="edit-mode-status-text">✏️ এডিট মোড: বন্ধ (চালু করতে ক্লিক করুন)</span></a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openOrderTracker(); return false;">📦 Live Order Tracker (অর্ডার ট্র্যাকিং)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.openPastOrdersModal(); return false;">📜 Past Orders (অর্ডারের ইতিহাস)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleAiBaristaChat(); return false;">🤖 এআই বারিস্টা ও ভয়েস অ্যাসিস্ট্যান্ট (AI Barista)</a></li>
+      <li class="mobile-only-link"><a href="#" onclick="window.toggleSiteTheme(); return false;"><span class="mobile-theme-text">🌙 ডার্ক মোড চালু করুন (Theme)</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <!-- Google Translate Container -->
+      <div id="google_translate_element" style="display: inline-block; margin-left: 10px;"></div>
+      <button type="button" class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle theme">🌙</button>
+      <button type="button" class="nav-tracker-btn" onclick="window.openOrderTracker()" title="আপনার লাইভ অর্ডার ট্র্যাক করুন">
+        📦 <span class="nav-btn-text">Track Order</span>
+      </button>
+      <button type="button" class="nav-tracker-btn" onclick="window.openPastOrdersModal()" title="অর্ডারের ইতিহাস দেখুন" style="background: rgba(212, 175, 55, 0.15); border: 1px solid var(--accent-gold);">
+        📜 <span class="nav-btn-text">Past Orders</span>
+      </button>
+      <button type="button" class="nav-cart-btn" id="navCartBtn">
+        🛒 <span class="nav-btn-text">Cart</span> <span class="cart-badge" id="cartCount">0</span>
+      </button>
+      <button type="button" class="btn btn-sm btn-customize-nav" onclick="window.openSiteEditor('tabGeneral')" style="background: var(--accent-gold); color: #1E293B; font-weight: 800; padding: 6px 12px; font-size: 0.82rem; border-radius: 6px;" title="পুরো ওয়েবসাইটের যেকোনো তথ্য এডিট ও কাস্টমাইজ করুন">
+        ⚙️ <span class="nav-btn-text">কাস্টমাইজ</span>
+      </button>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" style="position: relative;">
+    <div class="section-edit-banner" style="margin: 0 auto 1.5rem; max-width: 600px; background: rgba(0,0,0,0.5); color: #fff;">
+      <span>✏️ হিরো সেকশন ও ব্যানার কাস্টমাইজেশন</span>
+      <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabHero')">
+        ✏️ হিরো লেখা ও বাটন পরিবর্তন (Edit Hero)
+      </button>
+    </div>
+    <h1>Welcome to Local Coffee Shop</h1>
+    <p>প্রতিটি কাপে তাজা রোস্টেড প্রিমিয়াম কফি এবং হাতে তৈরি গরম পেস্ট্রির অবিস্মরণীয় স্বাদ ও আন্তরিক আতিথেয়তা।</p>
+    <div class="hero-actions">
+      <a href="menu.html" class="btn">View Our Menu</a>
+      <a href="#bookingSection" class="btn btn-secondary">Book a Table</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="container">
+    <div class="section-edit-banner">
+      <span>✏️ ফিচার ও বিশেষত্ব কাস্টমাইজেশন মোড</span>
+      <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabGeneral')">
+        ✏️ ক্যাফে তথ্য পরিবর্তন (Edit Info)
+      </button>
+    </div>
+    <h2 class="section-title">আমাদের বিশেষত্ব</h2>
+    <p class="section-subtitle">আমাদের প্রতিটি পরিবেশনায় রয়েছে ভালোবাসা, যত্ন এবং সেরা মানের কাঁচামাল</p>
+    <div class="grid grid-3">
+      <div class="card feature-card">
+        <div class="icon">☕</div>
+        <h3>Fresh Roast Coffee</h3>
+        <p>১০০% অর্গানিক অ্যারাবিকা বিন্স থেকে নিপুণ হাতে প্রস্তুত তাজা ব্রিউড কফি।</p>
+      </div>
+      <div class="card feature-card">
+        <div class="icon">🥐</div>
+        <h3>Artisan Pastries</h3>
+        <p>প্রতিদিন ভোরে তাজা বাটার দিয়ে বেক করা সুস্বাদু ও খাস্তা পেস্ট্রি।</p>
+      </div>
+      <div class="card feature-card">
+        <div class="icon">❤️</div>
+        <h3>Cozy Atmosphere</h3>
+        <p>বন্ধু, পরিবার বা একাকী কাজের জন্য শান্ত ও উষ্ণ ক্যাফে পরিবেশ।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Menu & Online Order Section (হোমপেজ মেনু ও অনলাইন অর্ডার) -->
+  <section class="container" id="popularMenuSection" style="margin-top: 3.5rem;">
+    <div class="section-edit-banner">
+      <span>✏️ জনপ্রিয় মেনু ও অনলাইন অর্ডার কাস্টমাইজেশন</span>
+      <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabMenu')">
+        ✏️ মেনু এডিট করুন (Edit Menu)
+      </button>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; margin-bottom: 1.5rem;">
+      <div>
+        <span style="background: rgba(212, 175, 55, 0.18); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 3px 12px; border-radius: 9999px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase;">⚡ ফাস্ট অনলাইন ডেলিভারি ও পিকআপ</span>
+        <h2 class="section-title" style="text-align: left; margin-top: 6px; margin-bottom: 4px;">জনপ্রিয় মেনু ও অনলাইন অর্ডার</h2>
+        <p class="section-subtitle" style="text-align: left; margin-bottom: 0;">যেকোনো আইটেম সরাসরি ব্যাগে যোগ করুন অথবা ১-ক্লিকেই দ্রুত অর্ডার সম্পন্ন করুন</p>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <a href="menu.html" class="btn btn-sm" style="background: var(--primary); color: #fff; font-weight: 700; border-radius: 6px;">📖 সম্পূর্ণ মেনু দেখুন (View Full Menu)</a>
+      </div>
+    </div>
+
+    <!-- Category Filter Pills for Home Menu -->
+    <div class="review-filters" id="homeMenuFilterGroup" style="margin-bottom: 1.5rem;">
+      <button type="button" class="filter-chip active" data-cat="all">🔥 সকল জনপ্রিয় আইটেম (All)</button>
+      <button type="button" class="filter-chip" data-cat="drinks">☕ কফি ও সিগনেচার ড্রিংকস</button>
+      <button type="button" class="filter-chip" data-cat="pastries">🥐 তাজা বেকারি ও পেস্ট্রি</button>
+      <button type="button" class="filter-chip" data-cat="combos">🎓 স্টুডেন্ট ও বাজেট কম্বো</button>
+    </div>
+
+    <!-- Dynamic Home Menu Grid -->
+    <div class="grid grid-3" id="homeMenuItemsGrid">
+      <!-- Dynamically filled by script.js -->
+    </div>
+  </section>
+
+  <!-- 1. Custom Coffee Maker / DIY Section (কাস্টম কফি মেকার) -->
+  <section class="container" style="margin-top: 4rem; padding: 2.5rem; background: var(--secondary-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+    <div style="text-align: center; max-width: 650px; margin: 0 auto 2rem auto;">
+      <span style="background: rgba(212, 175, 55, 0.18); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 3px 12px; border-radius: 9999px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase;">☕ DIY কফি ক্রিয়েটর</span>
+      <h2 style="font-size: 1.8rem; color: var(--dark); margin: 0.5rem 0 0.5rem 0;">আপনার মনের মতো কফি নিজেই তৈরি করুন (Build-Your-Own-Coffee)</h2>
+      <p style="color: var(--dark-soft); font-size: 0.95rem;">
+        বেস, দুধ, সিরাপ এবং টপিং আপনার পছন্দ অনুযায়ী বেছে নিয়ে তৈরি করুন আপনার ড্রিম কাপ অফ কফি!
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+      <!-- Base Selection -->
+      <div style="background: var(--secondary); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+        <label style="display: block; font-weight: 700; color: var(--primary); margin-bottom: 8px;">১. কফি বেস নির্বাচন করুন (Base)</label>
+        <select id="diyBase" onchange="window.calculateDiyCoffee()" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--secondary-card); color: var(--dark); font-size: 0.9rem;">
+          <option value="150" data-name="Espresso Base">এসপ্রেসো বেস (১৫০ ৳)</option>
+          <option value="180" data-name="Cold Brew Base">কোল্ড ব্রিউ বেস (১৮০ ৳)</option>
+          <option value="220" data-name="Caffè Latte Base" selected>ক্যাফে লাত্তে বেস (২২০ ৳)</option>
+        </select>
+      </div>
+
+      <!-- Milk Selection -->
+      <div style="background: var(--secondary); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+        <label style="display: block; font-weight: 700; color: var(--primary); margin-bottom: 8px;">২. দুধের ধরণ (Milk Choice)</label>
+        <select id="diyMilk" onchange="window.calculateDiyCoffee()" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--secondary-card); color: var(--dark); font-size: 0.9rem;">
+          <option value="0" data-name="Regular Milk" selected>সাধারণ গরুর দুধ (+০ ৳)</option>
+          <option value="60" data-name="Oat Milk">ওট মিল্ক (+৬০ ৳)</option>
+          <option value="70" data-name="Almond Milk">আমন্ড মিল্ক (+৭০ ৳)</option>
+          <option value="80" data-name="Coconut Milk">নারকেলের দুধ (+৮০ ৳)</option>
+        </select>
+      </div>
+
+      <!-- Syrup Selection -->
+      <div style="background: var(--secondary); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+        <label style="display: block; font-weight: 700; color: var(--primary); margin-bottom: 8px;">৩. ফ্লেভার সিরাপ (Syrup Flavor)</label>
+        <select id="diySyrup" onchange="window.calculateDiyCoffee()" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--secondary-card); color: var(--dark); font-size: 0.9rem;">
+          <option value="0" data-name="No Syrup" selected>সিরাপ ছাড়া (০ ৳)</option>
+          <option value="40" data-name="Vanilla Syrup">ভ্যানিলা সিরাপ (+৪০ ৳)</option>
+          <option value="50" data-name="Caramel Drizzle">ক্যারামেল ড্রিজল (+৫০ ৳)</option>
+          <option value="60" data-name="Hazelnut Syrup">হ্যাজেলনাট সিরাপ (+৬০ ৳)</option>
+          <option value="50" data-name="Chocolate Syrup">চকোলেট সিরাপ (+৫০ ৳)</option>
+        </select>
+      </div>
+
+      <!-- Toppings Selection -->
+      <div style="background: var(--secondary); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+        <label style="display: block; font-weight: 700; color: var(--primary); margin-bottom: 8px;">৪. অতিরিক্ত টপিং (Extras & Toppings)</label>
+        <select id="diyTop" onchange="window.calculateDiyCoffee()" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--secondary-card); color: var(--dark); font-size: 0.9rem;">
+          <option value="0" data-name="Standard" selected>সাধারণ পরিবেশন (+০ ৳)</option>
+          <option value="80" data-name="Extra Espresso Shot">অতিরিক্ত এসপ্রেসো শট (+৮০ ৳)</option>
+          <option value="40" data-name="Whipped Cream">হুইপড ক্রিম (+৪০ ৳)</option>
+          <option value="20" data-name="Cinnamon Dust">দারুচিনি গুঁড়ো (+২০ ৳)</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; background: var(--secondary); padding: 1.25rem 1.5rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); flex-wrap: wrap; gap: 15px;">
+      <div>
+        <span style="font-size: 0.85rem; color: var(--dark-soft);">আপনার কাস্টম কফি মূল্য:</span>
+        <div id="diyTotalPriceDisplay" style="font-size: 1.5rem; font-weight: 800; color: var(--accent-gold);">২২০ ৳</div>
+      </div>
+      <button type="button" onclick="window.addDiyCoffeeToCart()" class="btn" style="background: var(--accent-gold); color: #1E293B; font-weight: 800; padding: 12px 24px; border-radius: 6px;">
+        🛒 কাস্টম কফি ব্যাগে যোগ করুন
+      </button>
+    </div>
+  </section>
+
+  <!-- 2. Loyalty & Rewards Program Section (লয়্যালটি ও রিওয়ার্ড পয়েন্ট) -->
+  <section class="container" style="margin-top: 4rem; padding: 2.5rem; background: var(--secondary-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+    <div style="text-align: center; max-width: 650px; margin: 0 auto 2rem auto;">
+      <span style="background: rgba(39, 174, 96, 0.15); color: #27AE60; border: 1px solid #27AE60; padding: 3px 12px; border-radius: 9999px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase;">🏆 মেম্বারশিপ ও রিওয়ার্ডস</span>
+      <h2 style="font-size: 1.8rem; color: var(--dark); margin: 0.5rem 0 0.5rem 0;">লয়্যালটি ও রিওয়ার্ড পয়েন্ট প্রোগ্রাম</h2>
+      <p style="color: var(--dark-soft); font-size: 0.95rem;">
+        প্রতিটি অর্ডারে জমছে পয়েন্ট! পয়েন্ট জমিয়ে ফ্রি কফি এবং এক্সক্লুসিভ ডিসকাউন্ট রিডিম করুন।
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center;">
+      <!-- Points Status Box -->
+      <div style="background: linear-gradient(135deg, #1E293B, #0F172A); color: #FFF; padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--accent-gold); box-shadow: var(--shadow-sm);">
+        <span style="font-size: 2.5rem;">⭐</span>
+        <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--accent-gold);">আপনার লয়্যালটি ব্যালেন্স</h4>
+        <div id="userLoyaltyPointsDisplay" style="font-size: 2.8rem; font-weight: 900; color: #FFF; margin: 10px 0;">১২০ পয়েন্ট</div>
+        <p style="font-size: 0.85rem; color: #94A3B8; margin: 0;">গোল্ড মেম্বারশিপ স্ট্যাটাস (Gold Tier)</p>
+      </div>
+
+      <!-- Redeem Rewards List -->
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="background: var(--secondary); padding: 1rem 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong style="color: var(--dark); display: block; font-size: 0.95rem;">☕ ফ্রি এসপ্রেসো শট</strong>
+            <span style="font-size: 0.8rem; color: var(--dark-soft);">খরচ: ৫০ পয়েন্ট</span>
+          </div>
+          <button type="button" onclick="window.redeemLoyaltyReward(50, 'Free Espresso Shot')" class="btn btn-sm" style="background: var(--accent-gold); color: #1E293B; font-weight: 700;">রিডিম করুন</button>
+        </div>
+
+        <div style="background: var(--secondary); padding: 1rem 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong style="color: var(--dark); display: block; font-size: 0.95rem;">🥐 ফ্রি বাটার ক্রোয়াসোঁ</strong>
+            <span style="font-size: 0.8rem; color: var(--dark-soft);">খরচ: ৮০ পয়েন্ট</span>
+          </div>
+          <button type="button" onclick="window.redeemLoyaltyReward(80, 'Free Butter Croissant')" class="btn btn-sm" style="background: var(--accent-gold); color: #1E293B; font-weight: 700;">রিডিম করুন</button>
+        </div>
+
+        <div style="background: var(--secondary); padding: 1rem 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong style="color: var(--dark); display: block; font-size: 0.95rem;">🎉 ২০% ছাড় ভাউচার কোড</strong>
+            <span style="font-size: 0.8rem; color: var(--dark-soft);">খরচ: ১০০ পয়েন্ট</span>
+          </div>
+          <button type="button" onclick="window.redeemLoyaltyReward(100, '20% Discount Voucher')" class="btn btn-sm" style="background: var(--accent-gold); color: #1E293B; font-weight: 700;">রিডিম করুন</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Customer Review & Star Rating Section (গ্রাহক রিভিউ ও স্টার রেটিং) -->
+  <section class="container" style="margin-top: 4rem; padding: 2.5rem; background: var(--secondary-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+    <div style="text-align: center; max-width: 650px; margin: 0 auto 2rem auto;">
+      <span style="background: rgba(212, 175, 55, 0.18); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 3px 12px; border-radius: 9999px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase;">💬 গ্রাহকদের মতামত</span>
+      <h2 style="font-size: 1.8rem; color: var(--dark); margin: 0.5rem 0 0.5rem 0;">লাইভ কাস্টমার রিভিউ ও স্টার রেটিং</h2>
+      <p style="color: var(--dark-soft); font-size: 0.95rem;">
+        আমাদের কফি ও আতিথেয়তা সম্পর্কে আপনার মূল্যবান মতামত বা রেটিং দিন।
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <!-- Submit Review Form -->
+      <form id="customerReviewForm" onsubmit="window.handleCustomerReviewSubmit(event)" style="background: var(--secondary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem;">
+        <h4 style="margin: 0; color: var(--primary); font-size: 1.1rem;">আপনার রিভিউ লিখুন</h4>
+        <div class="form-group" style="text-align: left;">
+          <label for="reviewName" style="font-size: 0.85rem; font-weight: 700;">আপনার নাম</label>
+          <input type="text" id="reviewName" placeholder="যেমন: তানভীর হাসান" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--secondary-card); color: var(--dark);">
+        </div>
+        <div class="form-group" style="text-align: left;">
+          <label for="reviewRating" style="font-size: 0.85rem; font-weight: 700;">স্টার রেটিং (১ থেকে ৫)</label>
+          <select id="reviewRating" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--secondary-card); color: var(--dark);">
+            <option value="5" selected>⭐⭐⭐⭐⭐ (৫/৫ - চমৎকার)</option>
+            <option value="4">⭐⭐⭐⭐ (৪/৫ - খুব ভালো)</option>
+            <option value="3">⭐⭐⭐ (৩/৫ - ভালো)</option>
+            <option value="2">⭐⭐ (২/৫ - সাধারণ)</option>
+            <option value="1">⭐ (১/৫ - উন্নতির সুযোগ আছে)</option>
+          </select>
+        </div>
+        <div class="form-group" style="text-align: left;">
+          <label for="reviewComment" style="font-size: 0.85rem; font-weight: 700;">আপনার মন্তব্য</label>
+          <textarea id="reviewComment" rows="3" placeholder="কফি ও পরিবেশ কেমন লেগেছে লিখুন..." required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--secondary-card); color: var(--dark); resize: vertical;"></textarea>
+        </div>
+        <button type="submit" class="btn" style="background: var(--primary); color: #FFF; font-weight: 800; padding: 10px; border-radius: 6px;">
+          ⭐ রিভিউ সাবমিট করুন
+        </button>
+      </form>
+
+      <!-- Display Reviews List -->
+      <div style="display: flex; flex-direction: column; gap: 1rem; max-height: 420px; overflow-y: auto; padding-right: 4px;" id="customerReviewsContainer">
+        <!-- Dynamically rendered reviews -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Digital Gift Card & Coupon Generator (গিফট কার্ড ও কুপন জেনারেটর) -->
+  <section class="container" style="margin-top: 4rem; padding: 2.5rem; background: var(--secondary-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: 4rem;">
+    <div style="text-align: center; max-width: 650px; margin: 0 auto 2rem auto;">
+      <span style="background: rgba(39, 174, 96, 0.15); color: #27AE60; border: 1px solid #27AE60; padding: 3px 12px; border-radius: 9999px; font-size: 0.80rem; font-weight: 800; text-transform: uppercase;">🎁 গিফট কার্ড</span>
+      <h2 style="font-size: 1.8rem; color: var(--dark); margin: 0.5rem 0 0.5rem 0;">ডিজিটাল কফি গিফট কার্ড ও ভাউচার</h2>
+      <p style="color: var(--dark-soft); font-size: 0.95rem;">
+        প্রিয়জনকে জন্মদিনে বা বিশেষ মুহূর্তে উপহার দিন লোকাল কফি শপের ডিজিটাল গিফট কার্ড!
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center;">
+      <form id="giftCardForm" onsubmit="window.handleGiftCardGenerate(event)" style="background: var(--secondary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem;">
+        <h4 style="margin: 0; color: var(--primary); font-size: 1.1rem;">গিফট কার্ড তৈরি করুন</h4>
+        <div class="form-group" style="text-align: left;">
+          <label for="giftRecipient" style="font-size: 0.85rem; font-weight: 700;">প্রাপকের নাম (Recipient Name)</label>
+          <input type="text" id="giftRecipient" placeholder="যেমন: রাহাত আহমেদ" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--secondary-card); color: var(--dark);">
+        </div>
+        <div class="form-group" style="text-align: left;">
+          <label for="giftAmount" style="font-size: 0.85rem; font-weight: 700;">গিফটের পরিমাণ (Amount)</label>
+          <select id="giftAmount" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--secondary-card); color: var(--dark);">
+            <option value="500">৫০০ ৳ (Coffee Treat)</option>
+            <option value="1000" selected>১০০০ ৳ (Standard Gift)</option>
+            <option value="2000">২০০০ ৳ (Premium Treat)</option>
+            <option value="5000">৫০০০ ৳ (VIP Gourmet Pass)</option>
+          </select>
+        </div>
+        <div class="form-group" style="text-align: left;">
+          <label for="giftMsg" style="font-size: 0.85rem; font-weight: 700;">বিশেষ শুভেচ্ছা বার্তা</label>
+          <input type="text" id="giftMsg" placeholder="শুভ জন্মদিন! এক কাপ কফির উষ্ণতায়..." required style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--secondary-card); color: var(--dark);">
+        </div>
+        <button type="submit" class="btn" style="background: var(--accent-gold); color: #1E293B; font-weight: 800; padding: 10px; border-radius: 6px;">
+          🎁 গিফট কার্ড জেনারেট করুন
+        </button>
+      </form>
+
+      <!-- Generated Gift Card Preview Box -->
+      <div id="giftCardPreviewBox" style="background: linear-gradient(135deg, #1E293B, #0F172A); color: #FFF; padding: 2rem; border-radius: var(--radius-md); border: 2px dashed var(--accent-gold); display: flex; flex-direction: column; gap: 1rem; text-align: center; box-shadow: var(--shadow-sm);">
+        <span style="font-size: 2.2rem;">☕🎁</span>
+        <h4 style="margin: 0; color: var(--accent-gold); font-size: 1.2rem;">LOCAL COFFEE SHOP GIFT VOUCHER</h4>
+        <div id="giftCardOutputInfo" style="font-size: 0.9rem; color: #CBD5E1; line-height: 1.6;">
+          আপনার গিফট কার্ড জেনারেট করতে বাম পাশের ফর্মটি পূরণ করে সাবমিট করুন।
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Owner & Team Spotlight -->
+  <section class="container">
+    <div class="owner-section">
+      <div class="owner-grid">
+        <div class="owner-image-wrapper">
+          <div class="owner-img-container" id="ownerImgClickTriggerIndex" title="ছবি পরিবর্তন করতে ক্লিক করুন (Click to Change Photo)">
+            <img src="/owner_merajul_islam.jpg" alt="Owner MERAJUL ISLAM from Brahmanbaria" class="owner-img" referrerpolicy="no-referrer">
+            <div class="owner-photo-edit-badge" id="openPhotoModalBadgeIndex" title="ছবি পরিবর্তন করুন (Change Photo)">📷</div>
+          </div>
+          <button type="button" class="btn-change-photo-sub" id="openPhotoModalBtnIndex">
+            📷 ছবি পরিবর্তন করুন (Change Photo)
+          </button>
+        </div>
+        <div class="owner-details">
+          <span class="owner-badge">Founder & Master Roaster</span>
+          <h2 class="owner-name-display">MERAJUL ISLAM</h2>
+          <p class="owner-origin" style="color: var(--accent-gold); font-weight: 700; font-size: 1.05rem; margin-bottom: 4px;">📍 From <span class="owner-district-display">Brahmanbaria (ব্রাহ্মণবাড়িয়া)</span></p>
+          <p class="owner-role">মালিক ও প্রতিষ্ঠাতা (Owner, Local Coffee Shop)</p>
+          <p>ব্রাহ্মণবাড়িয়ার সন্তান মিরাজুল ইসলামের হাত ধরে ২০২৬ সালে লোকাল কফি শপের স্বপ্নযাত্রা শুরু হয়। তাঁর সুযোগ্য নেতৃত্বে আজ ৫০ জনে সমৃদ্ধ নিবেদিতপ্রাণ টিম নিরলসভাবে কাজ করছে।</p>
+          <div class="owner-quote">
+            "আমাদের কাছে কফি কেবল একটি পানীয় নয়; এটি প্রতিটি মানুষকে কাছাকাছি আনার একটি মিষ্টি উপলক্ষ।" — <strong>মিরাজুল ইসলাম (ব্রাহ্মণবাড়িয়া)</strong>
+          </div>
+          <!-- 100% Unlocked Direct Order Call-to-Actions for Customers -->
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px;">
+            <a href="https://wa.me/8801339564967?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%20%E0%A6%AE%E0%A6%BF%E0%A6%B0%E0%A6%BE%E0%A6%9C%E0%A7%81%E0%A6%B2%20%E0%A6%AD%E0%A6%BE%E0%A6%87%2C%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%B2%E0%A7%8B%E0%A6%95%E0%A6%BE%E0%A6%B2%20%E0%A6%95%E0%A6%AB%E0%A6%BF%20%E0%A6%B6%E0%A6%AA%20%E0%A6%A5%E0%A7%87%E0%A6%95%E0%A7%87%20%E0%A6%B8%E0%A6%B0%E0%A6%BE%E0%A6%B8%E0%A6%B0%E0%A6%BF%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener" class="btn btn-sm" style="background: #25D366; color: #ffffff; font-weight: bold; border-color: #25D366; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(37,211,102,0.35);">
+              💬 ওনারকে হোয়াটসঅ্যাপে সরাসরি অর্ডার করুন
+            </a>
+            <a href="tel:01339564967" class="btn btn-sm btn-secondary" style="display: inline-flex; align-items: center; gap: 6px; font-weight: bold;">
+              📞 সরাসরি ওনারকে কল করুন (01339564967)
+            </a>
+            <a href="menu.html" class="btn btn-sm" style="background: var(--accent-gold); color: #2C1810; font-weight: bold;">
+              ☕ মেনু দেখে ১-ক্লিকে অর্ডার
+            </a>
+            <a href="about.html" class="btn btn-sm btn-secondary" style="font-size: 0.85rem;">
+              আমাদের ৫০+ টিম &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loyalty Card Membership Banner & Rewards Section -->
+  <section class="container" id="loyaltySection">
+    <div class="loyalty-banner">
+      <div class="loyalty-grid">
+        <div class="loyalty-info">
+          <span class="loyalty-tag">✨ VIP Coffee Club Membership</span>
+          <h2>লোকাল কফি ক্লাব - লয়্যালটি মেম্বারশিপ</h2>
+          <p>আমাদের নিয়মিত কফিপ্রেমী অতিথিদের জন্য বিশেষ সম্মাননা। প্রতিটি অর্ডারে পয়েন্ট অর্জন করুন এবং উপভোগ করুন প্রিমিয়াম সব সুযোগ-সুবিধা ও এক্সক্লুসিভ উপহার।</p>
+          <ul class="loyalty-perks">
+            <li><span class="perk-icon">★</span> <strong>প্রতি ১০ পয়েন্টে</strong> ১ কাপ ফ্রি কফি</li>
+            <li><span class="perk-icon">🏷️</span> সকল বিন্স ও বেকারিতে <strong>১৫% ছাড়</strong></li>
+            <li><span class="perk-icon">🎂</span> জন্মদিনে <strong>ফ্রি স্পেশাল ট্রিট</strong></li>
+            <li><span class="perk-icon">⚡</span> <strong>প্রায়োরিটি রিজার্ভেশন</strong> ও ফাস্ট পিকআপ</li>
+          </ul>
+          <div class="loyalty-actions">
+            <button type="button" class="btn-loyalty" id="openLoyaltyModalBtn">
+              💳 ডিজিটাল মেম্বারশিপ কার্ড নিন (Join Now)
+            </button>
+            <button type="button" class="btn-loyalty-outline" id="loyaltyPerksBtn">
+              সুবিধাসমূহ জানুন (View Perks)
+            </button>
+          </div>
+        </div>
+
+        <div class="loyalty-card-visual" id="loyaltyCardDisplay">
+          <div class="card-top-row">
+            <div class="card-brand-logo">☕ LOCAL COFFEE CLUB</div>
+            <div class="card-chip"></div>
+          </div>
+          <div class="card-number" id="cardDisplayNumber">•••• •••• •••• 8492</div>
+          <div class="card-bottom-row">
+            <div class="card-holder-info">
+              <span class="card-label-small">CARD HOLDER</span>
+              <span class="card-holder-name" id="cardDisplayName">MERAJUL COFFEE CLUB</span>
+              <span style="font-size: 0.72rem; color: #E6C258; margin-top: 2px;">⭐ 50 Welcome Stars</span>
+            </div>
+            <span class="card-tier-badge">GOLD ROASTER</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Corner & Study Zone (ছাত্র কর্নার ও স্টুডেন্ট অফার) -->
+  <section class="container" id="studentSection">
+    <div class="student-zone-section">
+      <!-- Section Quick Edit Banner (Visible in Edit Mode) -->
+      <div class="section-edit-banner" style="background: rgba(255, 255, 255, 0.1); color: #FFF8DC; border-color: var(--accent-gold);">
+        <span>✏️ ছাত্র কর্নার ও স্টাডি কম্বো কাস্টমাইজেশন মোড</span>
+        <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabStudent')">
+          ✏️ স্টুডেন্ট অফার ও কম্বো পরিবর্তন (Edit Student Corner)
+        </button>
+      </div>
+
+      <div class="student-header-group">
+        <div>
+          <span class="student-badge-pill">🎓 Student Special • ২৫% এক্সক্লুসিভ ছাড়</span>
+          <h2 class="student-zone-title">ছাত্র কর্নার ও স্টাডি জোন (Student Corner & Perks)</h2>
+          <p class="student-zone-subtitle">
+            অ্যাসাইনমেন্ট, প্রেজেন্টেশন, থিসিস কিংবা বন্ধুদের সাথে গ্রুপ স্টাডির জন্য ক্যাফের নিরিবিলি পরিবেশ এবং প্রতিটি খাবারে স্পেশাল ছাত্র ছাড়!
+          </p>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-sm" id="openStudentPassModalBtn" style="background: var(--accent-gold); color: #1E293B; font-weight: 800; padding: 10px 18px;">
+            🎓 স্টুডেন্ট পাস কার্ড নিন (Get Student Pass)
+          </button>
+        </div>
+      </div>
+
+      <!-- Student Perks 4-Col Grid -->
+      <div class="student-perks-grid">
+        <div class="student-perk-card">
+          <div class="student-perk-icon">⚡</div>
+          <h4>হাই-স্পিড ওয়াইফাই ও সকেট</h4>
+          <p>প্রতিটি টেবিলে ডেডিকেটেড হাই-স্পিড অপটিক্যাল ইন্টারনেট ও ল্যাপটপ চার্জিং পয়েন্ট।</p>
+        </div>
+        <div class="student-perk-card">
+          <div class="student-perk-icon">📚</div>
+          <h4>শান্ত স্টাডি ও গ্রুপ জোন</h4>
+          <p>নিরিবিলি পড়াশোনা এবং বন্ধুদের সাথে প্রজেক্ট নিয়ে আলোচনার জন্য আলাদা বসার ব্যবস্থা।</p>
+        </div>
+        <div class="student-perk-card">
+          <div class="student-perk-icon">☕</div>
+          <h4>পরীক্ষার সপ্তাহে ফ্রি রিফিল</h4>
+          <p>সেমিস্টার ফাইনাল ও পরীক্ষার দিনগুলোতে যে কোনো ফিল্টার কফিতে ৫০% ডিসকাউন্টে রিফিল।</p>
+        </div>
+        <div class="student-perk-card">
+          <div class="student-perk-icon">🖨️</div>
+          <h4>ফ্রি অ্যাসাইনমেন্ট প্রিন্টিং</h4>
+          <p>যেকোনো অর্ডারে প্রতিদিন ৫ পৃষ্ঠা পর্যন্ত ফ্রি অ্যাসাইনমেন্ট/নোট প্রিন্ট আউট সাপোর্ট।</p>
+        </div>
+      </div>
+
+      <!-- Student Budget Combos -->
+      <div class="student-combos-header">
+        <h3 style="margin: 0; color: #FFF8DC; font-size: 1.25rem; display: flex; align-items: center; gap: 8px;">
+          <span>🥪</span> ছাত্র বাজেট স্টাডি কম্বো (Student Study Combos)
+        </h3>
+        <span style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 700;">★ সেভ করুন ২০% - ৩৫% পর্যন্ত</span>
+      </div>
+
+      <div class="student-combos-grid" id="studentCombosContainer">
+        <!-- Combo 1 -->
+        <div class="student-combo-card">
+          <span class="combo-save-badge">SAVE 21%</span>
+          <h3>Exam Night Crunch</h3>
+          <div class="combo-items-list">
+            ☕ 1x ১৬-ঘণ্টা রিফ্রেশিং কোল্ড ব্রু (Cold Brew)<br>
+            🍫 1x ওয়ালনাট ডার্ক চকলেট ব্রাউনি
+          </div>
+          <div class="combo-pricing-row">
+            <span class="combo-price-now">৫৫০ ৳</span>
+            <span class="combo-price-old">৭০০ ৳</span>
+          </div>
+          <button type="button" class="btn-add-combo" onclick="window.addStudentComboToCart('Exam Night Crunch Combo', 550)">
+            🛒 কার্টে যোগ করুন (Add to Cart)
+          </button>
+        </div>
+
+        <!-- Combo 2 -->
+        <div class="student-combo-card">
+          <span class="combo-save-badge">SAVE 22%</span>
+          <h3>Group Study Platter</h3>
+          <div class="combo-items-list">
+            ☕ 3x ক্রিমি ইতালিয়ান ক্যাপুচিনো (Cappuccino)<br>
+            🥐 3x ক্রিস্পি বাটার ক্রোয়াসোঁ (Croissants)
+          </div>
+          <div class="combo-pricing-row">
+            <span class="combo-price-now">১৬৫০ ৳</span>
+            <span class="combo-price-old">২১০০ ৳</span>
+          </div>
+          <button type="button" class="btn-add-combo" onclick="window.addStudentComboToCart('Group Study Platter (3x Coffee + 3x Pastry)', 1650)">
+            🛒 কার্টে যোগ করুন (Add to Cart)
+          </button>
+        </div>
+
+        <!-- Combo 3 -->
+        <div class="student-combo-card">
+          <span class="combo-save-badge">SAVE 20%</span>
+          <h3>Assignment Booster</h3>
+          <div class="combo-items-list">
+            ☕ 1x ডাবল অ্যারাবিকা এসপ্রেসো শট (Double Espresso)<br>
+            🥐 1x উষ্ণ সিনামন রোল ও ক্রিম চিজ
+          </div>
+          <div class="combo-pricing-row">
+            <span class="combo-price-now">৫৮০ ৳</span>
+            <span class="combo-price-old">৭২৫ ৳</span>
+          </div>
+          <button type="button" class="btn-add-combo" onclick="window.addStudentComboToCart('Assignment Booster Combo', 580)">
+            🛒 কার্টে যোগ করুন (Add to Cart)
+          </button>
+        </div>
+
+        <!-- Combo 4 -->
+        <div class="student-combo-card">
+          <span class="combo-save-badge">SAVE 25%</span>
+          <h3>Budget Chai & Muffin</h3>
+          <div class="combo-items-list">
+            ☕ 1x স্পাইসড মসলা চাই লাতে (Chai Latte)<br>
+            🧁 1x তাজা ফ্রুট ব্লুবেরি মাফিন (Muffin)
+          </div>
+          <div class="combo-pricing-row">
+            <span class="combo-price-now">৬০০ ৳</span>
+            <span class="combo-price-old">৮০০ ৳</span>
+          </div>
+          <button type="button" class="btn-add-combo" onclick="window.addStudentComboToCart('Budget Chai & Muffin Combo', 600)">
+            🛒 কার্টে যোগ করুন (Add to Cart)
+          </button>
+        </div>
+      </div>
+
+      <!-- Student ID Pass Box -->
+      <div class="student-pass-container">
+        <div class="student-pass-info">
+          <h3>🎓 ডিজিটাল স্টুডেন্ট কফি পাস ও ২৫% প্রোমোকোড</h3>
+          <p>
+            আপনার স্কুল/কলেজ/বিশ্ববিদ্যালয়ের আইডি দিয়ে সরাসরি ২৫% ছাড়ের স্টুডেন্ট প্রোমোকোড <strong>STUDENT25</strong> সক্রিয় করুন। কার্টে যেকোনো অর্ডারে ১-ক্লিকেই এই ডিসকাউন্ট কার্যকর হবে।
+          </p>
+          <div class="student-pass-actions">
+            <button type="button" class="btn-student-id-pass" id="generateStudentPassBtn">
+              💳 ডিজিটাল স্টুডেন্ট কার্ড তৈরি ও এডিট করুন
+            </button>
+            <button type="button" class="btn-copy-student-code" id="applyStudentPromoQuickBtn">
+              🏷️ 'STUDENT25' কোড কার্টে অ্যাপ্লাই করুন
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div class="digital-student-card-preview" id="studentCardPreviewBox" title="কার্ডের ওপর ক্লিক করে সরাসরি নাম, আইডি ও কলেজ এডিট করুন" style="cursor: pointer; transition: all 0.3s ease;">
+            <div class="pass-card-top">
+              <div class="pass-brand">☕ STUDENT COFFEE PASS</div>
+              <span class="pass-status-badge">ACTIVE 25% OFF</span>
+            </div>
+            <div class="pass-user-name" id="studentCardNameDisplay">MD. STUDENT</div>
+            <div class="pass-institute-name" id="studentCardInstituteDisplay">School / College / University</div>
+            <div class="pass-card-bottom">
+              <div>
+                <span style="font-size: 0.65rem; color: #93C5FD; display: block;">STUDENT ID / CODE</span>
+                <span class="pass-id-num" id="studentCardIdDisplay">STU-2026-8849</span>
+              </div>
+              <span class="pass-discount-tag">🏷️ 25% DISCOUNT</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+            <span style="font-size: 0.76rem; color: var(--accent-gold);">💡 কার্ডে ক্লিক করে তথ্য পরিবর্তন করুন</span>
+            <button type="button" class="btn btn-sm" id="editStudentPassBtn" style="background: rgba(212, 175, 55, 0.2); border: 1px solid var(--accent-gold); color: #FFF8DC; font-size: 0.78rem; padding: 4px 10px; border-radius: 4px;">
+              ✏️ কার্ডের নাম/আইডি পরিবর্তন
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasonal Specials Section (সিজনাল স্পেশাল ও লিমিটেড অফার) -->
+  <section class="container seasonal-specials-section" id="seasonalSpecialsSection">
+    <div class="section-edit-banner">
+      <span>✏️ সিজনাল স্পেশাল ও অফার কাস্টমাইজেশন মোড</span>
+      <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabMenu')">
+        ✏️ স্পেশাল অফার ও দাম পরিবর্তন (Edit Specials)
+      </button>
+    </div>
+
+    <div class="seasonal-header-row">
+      <div>
+        <span class="seasonal-badge-pill">✨ Seasonal Limited Editions</span>
+        <h2 class="seasonal-main-title">সিজনাল স্পেশাল ও অফার (Seasonal Specials)</h2>
+        <p class="seasonal-subtitle">ঋতুভিত্তিক বিশেষ পানীয় এবং শেফের এক্সক্লুসিভ বেকারি রেসিপি — সীমিত সময়ের জন্য বিশেষ ছাড়ে</p>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="btn btn-sm" onclick="window.location.href='menu.html'" style="background: var(--primary); color: #FFF; font-weight: 700; border-radius: 6px;">
+          📋 সম্পূর্ণ মেনু দেখুন
+        </button>
+      </div>
+    </div>
+
+    <!-- Season Filter Chips -->
+    <div class="season-filter-group" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+      <button type="button" class="filter-chip active" data-season="all">🌟 সবগুলো অফার (All Specials)</button>
+      <button type="button" class="filter-chip" data-season="autumn">🍁 অটাম স্পেশাল (Autumn)</button>
+      <button type="button" class="filter-chip" data-season="summer">🥭 সামার চিল (Summer)</button>
+      <button type="button" class="filter-chip" data-season="winter">❄️ উইন্টার মোকা (Winter)</button>
+      <button type="button" class="filter-chip" data-season="spring">🍓 স্প্রিং বেকারি (Spring)</button>
+      <button type="button" class="filter-chip" data-season="reserve">☕ ফাউন্ডার রিজার্ভ (Reserve)</button>
+    </div>
+
+    <!-- Seasonal Specials Grid (Dynamically Populated by script.js) -->
+    <div class="seasonal-specials-grid" id="homeSeasonalSpecialsContainer"></div>
+  </section>
+
+  <!-- Live Order Tracker Section (লাইভ অর্ডার ট্র্যাকার) -->
+  <section class="container order-tracker-section" id="orderTrackerSection">
+    <div class="tracker-header">
+      <span class="tracker-badge-pill">🚀 Real-Time Live Updates</span>
+      <h2 class="tracker-title">লাইভ অর্ডার ট্র্যাকার (Live Order Tracker)</h2>
+      <p class="tracker-subtitle">
+        আপনার অর্ডার করা কফি ও খাবারের বর্তমান প্রস্তুতি, বেকিং ও ডেলিভারি স্ট্যাটাস সরাসরি ট্র্যাক করুন
+      </p>
+    </div>
+
+    <!-- Search Form -->
+    <form class="order-tracker-search-bar" id="orderTrackerSearchForm">
+      <input 
+        type="text" 
+        id="orderTrackerSearchInput" 
+        class="order-tracker-search-input" 
+        placeholder="অর্ডার আইডি (যেমন: #849201) বা মোবাইল নম্বর লিখুন..." 
+        aria-label="Search Order ID"
+      >
+      <button type="submit" class="btn-tracker-search">
+        🔍 অর্ডার ট্র্যাক করুন
+      </button>
+      <button type="button" class="btn btn-secondary" onclick="window.trackOrderDemo()" style="border-radius: 6px; font-weight: 700;">
+        🧪 ডেমো টেস্ট
+      </button>
+    </form>
+
+    <!-- Dynamic Order Card Container -->
+    <div id="orderTrackerContainer"></div>
+  </section>
+
+  <!-- Table Reservation Section -->
+  <section class="container" id="bookingSection">
+    <div class="booking-section">
+      <h2 class="section-title">টেবিল বুকিং ও রিজার্ভেশন</h2>
+      <p class="section-subtitle">আপনার প্রিয়জনদের সাথে সুন্দর মুহূর্ত কাটাতে কিংবা মিটিংয়ের জন্য এখনই টেবিল রিজার্ভ করুন</p>
+      
+      <!-- Real-Time Table Availability Widget -->
+      <div id="realTimeAvailabilityBox" style="background: var(--secondary); border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 16px 20px; margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+          <h4 style="margin: 0; color: var(--primary); font-size: 1.05rem; display: flex; align-items: center; gap: 6px;">
+            <span>🟢</span> রিয়েল-টাইম টেবিল প্রাপ্যতা (Live Table Availability)
+          </h4>
+          <span id="availDateDisplay" style="font-size: 0.82rem; color: var(--accent-gold); font-weight: 700; background: rgba(212,175,55,0.1); padding: 4px 10px; border-radius: 4px;">আজকের লাইভ স্ট্যাটাস</span>
+        </div>
+        <p style="margin: 0 0 12px 0; font-size: 0.85rem; color: var(--dark-soft);">
+          নির্বাচিত তারিখের জন্য প্রতিটি সময় স্লটে মোট ১০টি টেবিলের মধ্যে কতটি ফাঁকা রয়েছে তা নিচে দেখানো হলো:
+        </p>
+        <div id="availabilitySlotsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 10px;">
+          <!-- dynamically populated slots -->
+        </div>
+      </div>
+
+      <form id="bookingForm">
+        <div class="booking-form-grid">
+          <div class="form-group">
+            <label for="bName">আপনার নাম (Full Name)*</label>
+            <input type="text" id="bName" name="name" placeholder="যেমন: তানভীর আহমেদ" required>
+          </div>
+          <div class="form-group">
+            <label for="bPhone">মোবাইল নম্বর (Phone Number)*</label>
+            <input type="tel" id="bPhone" name="phone" placeholder="017XXXXXXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="bEmail">ইমেইল ঠিকানা (Email)</label>
+            <input type="email" id="bEmail" name="email" placeholder="example@email.com">
+          </div>
+          <div class="form-group">
+            <label for="bGuests">অতিথির সংখ্যা (Number of Guests)*</label>
+            <select id="bGuests" name="guests" required>
+              <option value="1">১ জন (Single)</option>
+              <option value="2" selected>২ জন (Couple / Pair)</option>
+              <option value="3-4">৩ - ৪ জন (Small Group)</option>
+              <option value="5-8">৫ - ৮ জন (Family / Team)</option>
+              <option value="9+">৯+ জন (Party / Event)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bDate">তারিখ (Reservation Date)*</label>
+            <input type="date" id="bDate" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="bTime">সময় (Time Slot)*</label>
+            <select id="bTime" name="time" required>
+              <option value="08:00 AM">সকাল ০৮:০০ AM</option>
+              <option value="10:00 AM">সকাল ১০:০০ AM</option>
+              <option value="12:00 PM">দুপুর ১২:০০ PM</option>
+              <option value="03:00 PM">বিকাল ০৩:০০ PM</option>
+              <option value="05:00 PM">সন্ধ্যা ০৫:০০ PM</option>
+              <option value="07:00 PM" selected>সন্ধ্যা ০৭:০০ PM</option>
+              <option value="08:30 PM">রাত ০৮:৩০ PM</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="bSeating">আসন বা জোনের পছন্দ (Seating Preference)</label>
+            <select id="bSeating" name="seating">
+              <option value="Indoor Cozy Lounge">ইনডোর কোজি লাউঞ্জ (Indoor Cozy Lounge)</option>
+              <option value="Window Side View">উইন্ডো সাইড ভিউ (Window Side View)</option>
+              <option value="Outdoor Garden Terrace">আউটডোর গার্ডেন টেরেস (Outdoor Garden)</option>
+              <option value="Quiet Work Zone">কোয়াইট ওয়ার্কিং জোন (Quiet Work Zone)</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <button type="submit" class="btn" style="width: 100%; padding: 0.9rem;">টেবিল বুক করুন (Confirm Reservation)</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section with 5-Star Ratings & Breakdown -->
+  <section class="container" id="reviewsSection">
+    <div class="reviews-section-header">
+      <div>
+        <h2 class="section-title" style="text-align: left; margin-bottom: 0.3rem;">গ্রাহকদের রিভিউ ও ৫-স্টার রেটিং</h2>
+        <p class="section-subtitle" style="text-align: left; margin-bottom: 0;">আমাদের কফি, ফুড ও আতিথেয়তা নিয়ে সম্মানিত অতিথিদের মতামত</p>
+      </div>
+      <button type="button" class="btn" id="openReviewModalBtn">✍️ একটি রিভিউ দিন (Write Review)</button>
+    </div>
+
+    <!-- Rating Summary Dashboard -->
+    <div class="reviews-summary-dashboard">
+      <div class="rating-score-box">
+        <div class="rating-huge" id="aggregateRatingNum">4.9</div>
+        <div class="rating-stars-gold">★★★★★</div>
+        <div class="rating-count-text">৩৮০+ ভেরিফায়েড রিভিউ এর ওপর ভিত্তি করে</div>
+      </div>
+
+      <div class="rating-breakdown-bars">
+        <div class="breakdown-row">
+          <span class="breakdown-label">৫-স্টার</span>
+          <div class="breakdown-bar-bg"><div class="breakdown-bar-fill" style="width: 94%;"></div></div>
+          <span class="breakdown-pct">৯৪%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">৪-স্টার</span>
+          <div class="breakdown-bar-bg"><div class="breakdown-bar-fill" style="width: 5%;"></div></div>
+          <span class="breakdown-pct">৫%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">৩-স্টার</span>
+          <div class="breakdown-bar-bg"><div class="breakdown-bar-fill" style="width: 1%;"></div></div>
+          <span class="breakdown-pct">১%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">২-স্টার</span>
+          <div class="breakdown-bar-bg"><div class="breakdown-bar-fill" style="width: 0%;"></div></div>
+          <span class="breakdown-pct">০%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">১-স্টার</span>
+          <div class="breakdown-bar-bg"><div class="breakdown-bar-fill" style="width: 0%;"></div></div>
+          <span class="breakdown-pct">০%</span>
+        </div>
+      </div>
+
+      <div class="review-action-box">
+        <div style="font-size: 1.8rem; color: var(--success); font-weight: 800;">৯৯%</div>
+        <div style="font-size: 0.85rem; color: var(--dark-soft); font-weight: 600;">অতিথিরা ক্যাফেটি অন্যদের রেকমেন্ড করেন</div>
+        <span style="font-size: 0.78rem; background: rgba(39, 174, 96, 0.12); color: var(--success); padding: 3px 8px; border-radius: 4px; font-weight: 700;">✓ ১০০% ভেরিফায়েড গেস্ট</span>
+      </div>
+    </div>
+
+    <!-- Review Filter Pills -->
+    <div class="review-filters" id="reviewFilterGroup">
+      <button type="button" class="filter-chip active" data-filter="all">সকল রিভিউ (All)</button>
+      <button type="button" class="filter-chip" data-filter="5-star">⭐⭐⭐⭐⭐ ৫-স্টার (5-Star)</button>
+      <button type="button" class="filter-chip" data-filter="coffee">☕ কফি ও রোস্টিং</button>
+      <button type="button" class="filter-chip" data-filter="pastry">🥐 বেকারি ও পেস্ট্রি</button>
+      <button type="button" class="filter-chip" data-filter="ambiance">🏡 পরিবেশ ও স্টাফ</button>
+    </div>
+
+    <!-- Dynamic Reviews Grid -->
+    <div class="reviews-grid" id="reviewsContainer">
+      <!-- Injected and filtered via script.js -->
+    </div>
+  </section>
+
+  <!-- FAQ (Frequently Asked Questions) Section -->
+  <section class="container" id="faqSection" style="margin-top: 3.5rem;">
+    <!-- Section Quick Edit Banner (Visible in Edit Mode) -->
+    <div class="section-edit-banner">
+      <span>✏️ সচরাচর প্রশ্ন ও উত্তর (FAQ) কাস্টমাইজেশন মোড</span>
+      <button type="button" class="btn-section-quick-edit" onclick="window.openSiteEditor('tabFaq')">
+        ✏️ প্রশ্ন যোগ ও পরিবর্তন করুন (Edit FAQ)
+      </button>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 1.5rem;">
+      <div>
+        <h2 class="section-title" style="text-align: left; margin-bottom: 4px;">সচরাচর জিজ্ঞাসিত প্রশ্নাবলী (FAQ)</h2>
+        <p class="section-subtitle" style="text-align: left; margin-bottom: 0;">আমাদের কফি শপ, মেনু, অর্ডার ও সার্ভিস সম্পর্কে সাধারণ প্রশ্নের উত্তর</p>
+      </div>
+      <button type="button" class="btn btn-sm" onclick="window.openSiteEditor('tabFaq')" style="background: var(--accent-gold); color: #2C1810; font-weight: 800;">
+        💬 নতুন প্রশ্ন যোগ / পরিবর্তন
+      </button>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-search-wrapper">
+        <span class="faq-search-icon">🔍</span>
+        <input type="text" class="faq-search-input" id="faqSearchInput" placeholder="আপনার প্রশ্ন বা বিষয় খুঁজুন (e.g. বিন্স, মেম্বারশিপ, বুকিং, ডেলিভারি)...">
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+        <div class="faq-item active">
+          <button type="button" class="faq-question" aria-expanded="true">
+            <span>☕ আপনাদের কফি বিন্স কোথা থেকে সংগ্রহ করা হয় এবং কীভাবে রোস্ট করা হয়?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>আমাদের কফি বিন্স বিশ্ববিখ্যাত ইথিওপিয়া, কলম্বিয়া ও গুয়াতেমালার ১০০% অর্গানিক অ্যারাবিকা ফার্ম থেকে সরাসরি সংগৃহীত হয়। প্রতিষ্ঠাতা ও মাস্টার রোস্টার <strong>মিরাজুল ইসলাম (ব্রাহ্মণবাড়িয়া)</strong> নিজস্ব রোস্টিং ল্যাবে ছোট ছোট ব্যাচে বিন্স রোস্ট করেন, যার ফলে কফিতে সবসময় সতেজতা এবং অনন্য ফ্লেভার নোট অক্ষুণ্ণ থাকে।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>💳 লয়্যালটি মেম্বারশিপ কার্ড কীভাবে কাজ করে এবং কীভাবে পয়েন্ট রিডিম করব?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>লোকাল কফি শপের মেম্বারশিপ সম্পূর্ণ ফ্রি! ওয়েবসাইটে বা কাউন্টারে সাইন-আপ করলেই সাথে সাথে ৫০ বোনাস স্টার পাবেন। প্রতি ১ ডলার বা সমপরিমাণ অর্ডারে ১টি স্টার জমা হয়। প্রতি ১০টি স্টার দিয়ে আপনি যেকোনো সিগনেচার কফি ফ্রিতে উপভোগ করতে পারবেন এবং সাথে পাবেন সব পণ্যে ১৫% মেম্বার ডিসকাউন্ট।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>📅 টেবিল রিজার্ভেশন বা অগ্রিম বুকিং করতে কোনো অতিরিক্ত ফি দিতে হয় কি?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>না, টেবিল বুকিং সম্পূর্ণ ফ্রি! আপনি আমাদের হোমপেজের 'বুকিং ফর্ম' পূরণ করে যেকোনো সময় টেবিল রিজার্ভ করতে পারেন। আমরা আপনার আগমনের ১৫ মিনিট পর্যন্ত টেবিল সংরক্ষিত রাখি। জরুরি প্রয়োজনেই কল করুন আমাদের হটলাইন নম্বরে: <strong>01339564967</strong>।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>🛵 হোম ডেলিভারি ও অনলাইন পিকআপ অর্ডারের নিয়ম কী?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>আমাদের অনলাইন কার্ট থেকে সরাসরি অর্ডার করে পিকআপ বা দ্রুত ডেলিভারি নিতে পারেন। স্পেশাল প্রোমোকোড <strong>COFFEE20</strong> ব্যবহার করলে সব অর্ডারে ২০% ছাড় উপভোগ করতে পারবেন। অর্ডার কনফার্ম হওয়ার ১৫-২০ মিনিটের মধ্যে গরম কফি ও তাজা পেস্ট্রি প্রস্তুত রাখা হয়।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>🌱 মেনুতে কি ভেগান (Vegan), ল্যাকটোজ-ফ্রি ও ডায়েটরি বিকল্প রয়েছে?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>হ্যাঁ, অবশ্যই! আমাদের সব কফিতে ওট মিল্ক (Oat Milk), অ্যালমন্ড মিল্ক (Almond Milk), ও সয়া মিল্ক অপশন রয়েছে। এছাড়া আমাদের বেকারিতে সুগার-ফ্রি ব্রাউনি ও গ্লুটেন-ফ্রি মাফিন প্রতিদিন ভোরে প্রস্তুত করা হয়।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>💻 ল্যাপটপ নিয়ে কাজ করা বা পড়ালেখার জন্য ওয়াইফাই ও পরিবেশ কেমন?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>আমাদের ক্যাফেতে রয়েছে হাই-স্পিড ফ্রি ফাইবার অপটিক ওয়াইফাই, প্রতিটি টেবিলে পাওয়ার আউটলেট/চার্জিং পয়েন্ট এবং একটি বিশেষ 'Quiet Work Zone'। শিক্ষার্থী, ফ্রিল্যান্সার ও রিমোট কর্মীদের কাজের জন্য এটি একটি আদর্শ পরিবেশ।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>🎉 বার্থডে পার্টি, কর্পোরেট মিটিং বা প্রাইভেট ইভেন্টের জন্য পুরো ক্যাফে বুক করা যাবে?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>হ্যাঁ, আমাদের ৫০ জনের দক্ষ ক্যাটারিং ও ইভেন্ট টিম যেকোনো জন্মদিন, টিম গ্যাদারিং বা কর্পোরেট কফি ব্রেকের জন্য স্পেশাল প্যাকেজ প্রদান করে। বিস্তারিত জানতে আমাদের সাথে <strong>01339564967</strong> নম্বরে যোগাযোগ করুন।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operating Hours -->
+  <section class="container text-center">
+    <div class="card" style="max-width: 680px; margin: 0 auto;">
+      <h2>Operating Hours & Visit Us</h2>
+      <p style="margin-top: 10px;"><strong>Monday – Friday:</strong> 7:00 AM – 8:00 PM</p>
+      <p><strong>Saturday – Sunday:</strong> 8:00 AM – 6:00 PM</p>
+      <p style="margin-top: 10px; font-size: 0.95rem; color: var(--dark-soft);">📍 123 Coffee Street, City, State 12345 | 📞 Hotline: <a href="tel:01339564967" style="color: var(--primary); font-weight: 700;">01339564967</a></p>
+    </div>
+  </section>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/owner_merajul_islam.jpg" alt="Owner Merajul Islam" class="owner-img" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold);" referrerpolicy="no-referrer">
+        <div>
+          <h3 style="font-size: 1.05rem; margin: 0;">☕ আপনার অর্ডার ব্যাগ</h3>
+          <span style="font-size: 0.72rem; color: #FFF8DC; font-weight: 600;">মালিক: মেরাজুল ইসলাম (01339564967)</span>
+        </div>
+      </div>
+      <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItemsList">
+      <!-- Dynamically filled by script.js -->
+    </div>
+    <div class="cart-footer">
+      <div class="coupon-group">
+        <input type="text" id="couponCodeInput" placeholder="প্রোমোকোড লিখুন (e.g. COFFEE20)">
+        <button type="button" class="btn btn-sm" id="applyCouponBtn">Apply</button>
+      </div>
+      <div class="cart-summary-line">
+        <span>সাবটোটাল (Subtotal):</span>
+        <strong id="cartSubtotal">০ ৳</strong>
+      </div>
+      <div class="cart-summary-line" style="color: #27AE60;">
+        <span>ডিসকাউন্ট (Discount):</span>
+        <strong id="cartDiscount">-০ ৳</strong>
+      </div>
+      <div class="cart-summary-line total">
+        <span>সর্বমোট (Total):</span>
+        <strong id="cartTotal">০ ৳</strong>
+      </div>
+      <button type="button" class="btn" id="checkoutBtn" style="width: 100%; margin-top: 0.75rem;">
+        অর্ডার কনফার্ম করুন (Checkout)
+      </button>
+    </div>
+  </div>
+
+  <!-- Loyalty Card Membership Modal -->
+  <div class="custom-modal-overlay" id="loyaltyModalOverlay">
+    <div class="custom-modal" style="max-width: 480px;">
+      <span class="modal-icon">💳</span>
+      <h3 class="modal-title">লোকাল কফি ক্লাব - মেম্বারশিপ কার্ড</h3>
+      <p style="color: var(--dark-soft); font-size: 0.9rem; margin-bottom: 1.2rem;">আপনার নাম ও ফোন দিয়ে এখনই আপনার এক্সক্লুসিভ ডিজিটাল গোল্ড মেম্বারশিপ কার্ড তৈরি করুন।</p>
+      
+      <form id="loyaltyJoinForm">
+        <div class="form-group" style="text-align: left;">
+          <label for="loyaltyNameInput">মেম্বারের নাম (Member Full Name)*</label>
+          <input type="text" id="loyaltyNameInput" placeholder="যেমন: তানজিম আহমেদ" required>
+        </div>
+        <div class="form-group" style="text-align: left;">
+          <label for="loyaltyPhoneInput">মোবাইল নম্বর (Phone)*</label>
+          <input type="tel" id="loyaltyPhoneInput" placeholder="017XXXXXXXX" required>
+        </div>
+        <div class="form-group" style="text-align: left;">
+          <label for="loyaltyFavBrew">পছন্দের পানীয় (Favorite Brew)</label>
+          <select id="loyaltyFavBrew" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--secondary); color: var(--dark);">
+            <option value="Signature Espresso">সিগনেচার এসপ্রেসো (Signature Espresso)</option>
+            <option value="Caramel Macchiato" selected>ক্যারামেল ম্যাকিয়াটো (Caramel Macchiato)</option>
+            <option value="Brahmanbaria Special Roast">ব্রাহ্মণবাড়িয়া স্পেশাল রোস্ট (Special Roast)</option>
+            <option value="Vanilla Bean Latte">ভ্যানিলা বিন লাতে (Vanilla Latte)</option>
+            <option value="Artisan Cold Brew">কোল্ড ব্রু (Cold Brew)</option>
+          </select>
+        </div>
+        <div style="background: rgba(212, 175, 55, 0.15); border: 1px dashed var(--accent-gold); padding: 0.8rem; border-radius: var(--radius-sm); margin-bottom: 1.2rem; font-size: 0.85rem; color: var(--dark); text-align: left;">
+          🎁 <strong>ওয়েলকাম বোনাস:</strong> রেজিস্ট্রেশনের সাথে সাথেই আপনি <strong>৫০ বোনাস স্টার (Stars)</strong> পাবেন!
+        </div>
+        <button type="submit" class="btn btn-loyalty" style="width: 100%; justify-content: center;">
+          ডিজিটাল কার্ড ইস্যু করুন (Generate My VIP Card)
+        </button>
+      </form>
+      <button type="button" class="btn btn-secondary" id="loyaltyModalCloseBtn" style="width: 100%; margin-top: 8px;">
+        বন্ধ করুন (Close)
+      </button>
+    </div>
+  </div>
+
+  <!-- Write Review Modal -->
+  <div class="custom-modal-overlay" id="reviewModalOverlay">
+    <div class="custom-modal" style="max-width: 500px;">
+      <span class="modal-icon">✍️</span>
+      <h3 class="modal-title">আপনার কফি অভিজ্ঞতা শেয়ার করুন</h3>
+      <p style="color: var(--dark-soft); font-size: 0.9rem; margin-bottom: 1rem;">আপনার মূল্যবান রিভিউ আমাদের কোয়ালিটি ও সার্ভিস আরও উন্নত করতে সাহায্য করবে।</p>
+      
+      <form id="writeReviewForm">
+        <div class="form-group" style="text-align: left;">
+          <label>রেটিং নির্বাচন করুন (Select 5-Star Rating)*</label>
+          <div class="star-rating-selector" id="starSelector" role="radiogroup" aria-label="Rating Stars">
+            <span data-val="1" title="1 Star">★</span>
+            <span data-val="2" title="2 Stars">★</span>
+            <span data-val="3" title="3 Stars">★</span>
+            <span data-val="4" title="4 Stars">★</span>
+            <span data-val="5" class="selected" title="5 Stars">★</span>
+          </div>
+          <input type="hidden" id="selectedStarRating" value="5">
+        </div>
+
+        <div class="form-group" style="text-align: left;">
+          <label for="revAuthorName">আপনার নাম (Full Name)*</label>
+          <input type="text" id="revAuthorName" placeholder="যেমন: ফারহানা করিম" required>
+        </div>
+
+        <div class="form-group" style="text-align: left;">
+          <label for="revCategoryTag">কোন বিষয়টি রিভিউ করছেন? (Category)*</label>
+          <select id="revCategoryTag" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--secondary); color: var(--dark);" required>
+            <option value="coffee" selected>☕ সিগনেচার কফি ও এসপ্রেসো (Coffee)</option>
+            <option value="pastry">🥐 বেকারি, ক্রোয়াসোঁ ও ডেজার্ট (Pastry)</option>
+            <option value="ambiance">🏡 ক্যাফে পরিবেশ, ওয়াইফাই ও স্টাফ (Ambiance)</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="text-align: left;">
+          <label for="revComment">আপনার রিভিউ বা মন্তব্য (Your Review)*</label>
+          <textarea id="revComment" rows="3" placeholder="কফির স্বাদ, রোস্টিং কোয়ালিটি বা স্টাফদের আতিথেয়তা সম্পর্কে আপনার অনুভূতি লিখুন..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%; padding: 0.85rem;">
+          রিভিউ সাবমিট করুন (Submit Review)
+        </button>
+      </form>
+      <button type="button" class="btn btn-secondary" id="reviewModalCloseBtn" style="width: 100%; margin-top: 8px;">
+        বাতিল করুন (Cancel)
+      </button>
+    </div>
+  </div>
+
+  <!-- Owner Photo Change Modal -->
+  <div class="custom-modal-overlay" id="photoModalOverlay">
+    <div class="custom-modal" style="max-width: 480px;">
+      <span class="modal-icon">📷</span>
+      <h3 class="modal-title">মালিকের ছবি পরিবর্তন করুন</h3>
+      <p style="color: var(--dark-soft); font-size: 0.9rem; margin-bottom: 1rem;">মিরাজুল ইসলাম (মালিক)-এর নতুন ছবি আপলোড করুন অথবা ছবির লিংক দিন।</p>
+
+      <!-- Live Circular Preview -->
+      <div style="text-align: center; margin-bottom: 1.2rem;">
+        <img id="photoModalPreview" src="/owner_merajul_islam.jpg" alt="Preview" class="photo-preview-circle">
+        <span style="font-size: 0.78rem; color: var(--dark-soft);">লাইভ প্রিভিউ (Live Preview)</span>
+      </div>
+
+      <!-- File Drag and Drop Zone -->
+      <div class="photo-upload-dropzone" id="photoDropzone">
+        <div style="font-size: 2.2rem; margin-bottom: 6px;">📁</div>
+        <strong style="color: var(--dark); font-size: 0.95rem;">মোবাইল বা কম্পিউটার থেকে ছবি আপলোড করুন</strong>
+        <p style="font-size: 0.82rem; color: var(--dark-soft); margin-top: 4px;">ছবি এখানে টেনে আনুন বা ক্লিক করে ফাইল সিলেক্ট করুন (JPG, PNG, WebP)</p>
+        <input type="file" id="ownerPhotoInput" accept="image/*" style="display: none;">
+      </div>
+
+      <!-- URL Input Alternative -->
+      <div class="form-group" style="text-align: left; margin-top: 1rem;">
+        <label for="ownerPhotoUrlInput" style="font-size: 0.88rem;">অথবা ছবির সরাসরি ওয়েব লিংক দিন (Image URL):</label>
+        <input type="url" id="ownerPhotoUrlInput" placeholder="https://example.com/my-photo.jpg">
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-top: 1.2rem;">
+        <button type="button" class="btn" id="savePhotoBtn" style="flex: 1; padding: 0.75rem;">
+          💾 সংরক্ষণ করুন (Save Photo)
+        </button>
+        <button type="button" class="btn btn-secondary" id="resetPhotoBtn" style="padding: 0.75rem;" title="ডিফল্ট ছবিতে ফিরে যান">
+          🔄 রিসেট (Reset)
+        </button>
+      </div>
+      <button type="button" class="btn btn-secondary" id="photoModalCloseBtn" style="width: 100%; margin-top: 8px;">
+        বাতিল করুন (Cancel)
+      </button>
+    </div>
+  </div>
+
+  <!-- Student Pass Generator Modal -->
+  <div class="custom-modal-overlay" id="studentPassModalOverlay">
+    <div class="custom-modal" style="max-width: 500px;">
+      <span class="modal-icon">🎓</span>
+      <h3 class="modal-title">ডিজিটাল স্টুডেন্ট পাস কার্ড জেনারেটর</h3>
+      <p style="color: var(--dark-soft); font-size: 0.9rem; margin-bottom: 1rem;">
+        আপনার তথ্য পূরণ করে সাথে সাথে স্টুডেন্ট কার্ড সক্রিয় করুন এবং ক্যাফেতে <strong>২৫% ইনস্ট্যান্ট ডিসকাউন্ট (STUDENT25)</strong> উপভোগ করুন।
+      </p>
+
+      <form id="studentPassForm">
+        <div class="form-group" style="text-align: left;">
+          <label for="studentNameInput">ছাত্র/ছাত্রীর নাম (Student Full Name)*</label>
+          <input type="text" id="studentNameInput" placeholder="যেমন: সাজিদ আহমেদ" required>
+        </div>
+
+        <div class="form-group" style="text-align: left;">
+          <label for="studentInstituteInput">শিক্ষা প্রতিষ্ঠানের নাম (School / College / University)*</label>
+          <input type="text" id="studentInstituteInput" placeholder="যেমন: Brahmanbaria Govt. College" required>
+        </div>
+
+        <div class="editor-form-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div class="form-group" style="text-align: left;">
+            <label for="studentRollInput">রোল বা স্টুডেন্ট আইডি (ID)*</label>
+            <input type="text" id="studentRollInput" placeholder="যেমন: STU-2026" required>
+          </div>
+          <div class="form-group" style="text-align: left;">
+            <label for="studentFavSubject">পড়ালেখা / বিষয় (Department)</label>
+            <input type="text" id="studentFavSubject" placeholder="যেমন: Science / BBA">
+          </div>
+        </div>
+
+        <div style="background: rgba(30, 41, 59, 0.06); border: 1px dashed var(--accent-gold); border-radius: var(--radius-sm); padding: 10px; margin-bottom: 1rem; text-align: left; font-size: 0.82rem;">
+          ✨ <strong>অ্যাক্টিভেটেড বেনিফিট:</strong> আনলিমিটেড স্টাডি জোন ও হাই-স্পিড ওয়াইফাই অ্যাক্সেস, ২৫% ডিসকাউন্ট এবং ফ্রি স্টাডি রিফিল।
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%; padding: 0.85rem; font-weight: 800; background: linear-gradient(135deg, #1E293B, #0F172A); color: var(--accent-gold); border: 1px solid var(--accent-gold);">
+          🎓 স্টুডেন্ট পাস কার্ড ইস্যু করুন (Generate Card)
+        </button>
+      </form>
+      <button type="button" class="btn btn-secondary" id="studentPassModalCloseBtn" style="width: 100%; margin-top: 8px;">
+        বাতিল করুন (Cancel)
+      </button>
+    </div>
+  </div>
+
+  <!-- Google Maps Store Location & Grounding Section -->
+  <section class="container" style="margin: 4rem auto; padding: 2.5rem; background: var(--secondary-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+    <div style="text-align: center; max-width: 650px; margin: 0 auto 2rem auto;">
+      <span style="font-size: 2.2rem;">📍</span>
+      <h2 style="font-size: 1.8rem; color: var(--dark); margin: 0.5rem 0 0.5rem 0;">আমাদের ক্যাফে লোকেশন ও গুগল ম্যাপস (Store Location)</h2>
+      <p style="color: var(--dark-soft); font-size: 0.95rem;">
+        ব্রাহ্মণবাড়িয়া শহরের কেন্দ্রস্থলে অবস্থিত আমাদের শান্ত ও মনোরম ক্যাফেতে আপনাকে স্বাগতম। সরাসরি এসে আমাদের ফ্রেশ রোস্ট কফি ও পেস্ট্রি উপভোগ করুন।
+      </p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="background: var(--secondary); padding: 1.25rem; border-radius: var(--radius-sm); border-left: 4px solid var(--accent-gold);">
+          <h4 style="margin: 0 0 4px 0; color: var(--dark);">📍 মূল শাখা (Main Branch)</h4>
+          <p style="margin: 0; font-size: 0.9rem; color: var(--dark-soft);">ক্যাফে রোড, টিএ রোড মোড়, ব্রাহ্মণবাড়িয়া সদর, ব্রাহ্মণবাড়িয়া - ৩৪০০</p>
+        </div>
+        <div style="background: var(--secondary); padding: 1.25rem; border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+          <h4 style="margin: 0 0 4px 0; color: var(--dark);">🕒 খোলা থাকে (Operating Hours)</h4>
+          <p style="margin: 0; font-size: 0.9rem; color: var(--dark-soft);">প্রতিদিন সকাল ৮:০০ টা থেকে রাত ১১:০০ টা পর্যন্ত খোলা।</p>
+        </div>
+        <div style="background: var(--secondary); padding: 1.25rem; border-radius: var(--radius-sm); border-left: 4px solid #27AE60;">
+          <h4 style="margin: 0 0 4px 0; color: var(--dark);">📞 হটলাইন ও যোগাযোগ</h4>
+          <p style="margin: 0; font-size: 0.9rem; color: var(--dark-soft);">ফোন: 01339564967 | ইমেল: support@localcoffeeshop.com</p>
+        </div>
+      </div>
+      
+      <div style="border-radius: var(--radius-md); overflow: hidden; border: 2px solid var(--border-color); height: 320px; box-shadow: var(--shadow-sm);">
+        <iframe 
+          title="Local Coffee Shop Location Map"
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          loading="lazy" 
+          allowfullscreen 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.58308569857!2d91.1115!3d23.9575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3753c893b0b0b0b1%3A0x0!2sBrahmanbaria!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating AI Barista Chat & Voice Assistant Widget -->
+  <div id="aiBaristaWidget" style="position: fixed; bottom: 25px; right: 25px; z-index: 9999;">
+    <button type="button" id="aiBaristaToggleBtn" onclick="window.toggleAiBaristaChat()" style="background: linear-gradient(135deg, var(--accent-gold), #D4AF37); color: #1E293B; border: none; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 8px 24px rgba(0,0,0,0.25); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; transition: transform 0.3s ease;" title="এআই বারিস্টা ও ভয়েস অ্যাসিস্ট্যান্টের সাথে কথা বলুন">
+      🤖
+    </button>
+    
+    <!-- AI Chat Window -->
+    <div id="aiBaristaModal" style="display: none; position: absolute; bottom: 75px; right: 0; width: 360px; max-width: 90vw; background: var(--secondary-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); box-shadow: 0 12px 36px rgba(0,0,0,0.3); overflow: hidden; display: none; flex-direction: column; z-index: 10000;">
+      <div style="background: linear-gradient(135deg, #1E293B, #0F172A); color: #FFF; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.4rem;">☕</span>
+          <div>
+            <h4 style="margin: 0; font-size: 1rem; color: var(--accent-gold);">এআই বারিস্টা ও ভয়েস অ্যাসিস্ট্যান্ট</h4>
+            <span style="font-size: 0.72rem; color: #94A3B8;">Powered by Gemini & Live Audio</span>
+          </div>
+        </div>
+        <button type="button" onclick="window.toggleAiBaristaChat()" style="background: none; border: none; color: #FFF; font-size: 1.4rem; cursor: pointer;">&times;</button>
+      </div>
+
+      <!-- Mode Tabs -->
+      <div style="display: flex; background: var(--secondary); border-bottom: 1px solid var(--border-color); padding: 6px;">
+        <button type="button" id="aiTabChat" onclick="window.switchAiTab('chat')" style="flex: 1; padding: 6px; border: none; background: var(--accent-gold); color: #1E293B; font-weight: 700; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">💬 চ্যাট করুন</button>
+        <button type="button" id="aiTabVoice" onclick="window.switchAiTab('voice')" style="flex: 1; padding: 6px; border: none; background: transparent; color: var(--dark); font-weight: 600; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">🎙️ লাইভ ভয়েস</button>
+      </div>
+
+      <!-- Chat View -->
+      <div id="aiChatContainer" style="display: flex; flex-direction: column; height: 320px;">
+        <div id="aiChatMessages" style="flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+          <div style="background: var(--secondary); padding: 10px 12px; border-radius: 8px; max-width: 85%; color: var(--dark); align-self: flex-start; border-left: 3px solid var(--accent-gold);">
+            👋 নমস্কার! আমি আপনার এআই বারিস্টা। আমাদের কফি, পেস্ট্রি, সিজনাল অফার অথবা যেকোনো সুপারিশ সম্পর্কে জানতে আমাকে প্রশ্ন করুন।
+          </div>
+        </div>
+        <div style="padding: 10px; border-top: 1px solid var(--border-color); display: flex; gap: 6px; background: var(--secondary-card);">
+          <input type="text" id="aiChatInput" placeholder="কফি বা অফার সম্পর্কে কিছু জিজ্ঞেস করুন..." style="flex: 1; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.85rem; background: var(--secondary); color: var(--dark);">
+          <button type="button" onclick="window.sendAiMessage()" style="background: var(--accent-gold); color: #1E293B; border: none; padding: 8px 14px; font-weight: 700; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">প্রেরণ</button>
+        </div>
+      </div>
+
+      <!-- Voice View -->
+      <div id="aiVoiceContainer" style="display: none; flex-direction: column; height: 320px; align-items: center; justify-content: center; padding: 20px; text-align: center;">
+        <div id="aiVoiceOrb" style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-gold), #27AE60); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin-bottom: 1rem; box-shadow: 0 0 20px rgba(39, 174, 96, 0.4); animation: pulse 2s infinite;">
+          🎙️
+        </div>
+        <h4 id="aiVoiceStatusText" style="margin: 0 0 6px 0; color: var(--dark); font-size: 1rem;">ভয়েস কনভার্সেশন প্রস্তুত</h4>
+        <p style="color: var(--dark-soft); font-size: 0.82rem; margin: 0 0 1.2rem 0;">কথা বলতে নিচের বাটনে ক্লিক করুন অথবা ভয়েস কমান্ড দিন।</p>
+        <button type="button" id="aiVoiceMicBtn" onclick="window.toggleVoiceListening()" class="btn" style="background: #27AE60; color: #FFF; font-weight: 700; padding: 10px 20px; border-radius: 20px; font-size: 0.88rem;">
+          🎙️ কথা বলা শুরু করুন (Start Voice)
+        </button>
+        <div id="aiVoiceTranscript" style="margin-top: 10px; font-size: 0.82rem; color: var(--accent-gold); min-height: 24px; font-style: italic;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Local Coffee Shop. All rights reserved. | Owner: <strong>MERAJUL ISLAM (from Brahmanbaria)</strong> | 📞 Hotline: <a href="tel:01339564967" style="color: #FFF8DC; font-weight: 700;">01339564967</a></p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script type="module" src="/script.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'bn', includedLanguages: 'bn,en,hi,ar,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
